@@ -315,7 +315,7 @@ function nextStep(status) {
 }
 ```
 
-## [推荐] 界面绑定的数据直接使用 Async 管道
+## [推荐] `Observable`建议与`async`管道和 OnPush 模式一同使用。不推荐在组件当中手动订阅`Observable`并将其中的值存储在组件成员当中
 
 为何？1. 在 OnPush 策略下不需要手动刷新 2. 自动取消订阅
 
@@ -370,7 +370,7 @@ export class DemoComponent implements OnInit, OnDestroy {
 
 为何？降低代码复杂度，可读性好
 
-```
+```Typescript
 // bad
 public renewToken() : Subject<User> {
    if (!this.isRenewing) {
@@ -389,15 +389,27 @@ public renewToken() : Subject<User> {
     }
     return this.renewToken$;
  }
+// 该代码的功能是得到一个`Observable`，并且保证同一时间只会执行一个`authService.renewToken()`操作。
 
- // good
+// 那么这段代码用纯rxjs写可以简化成这样
+// good
 constructor(){
    this.renewToken$ = defer(()=>authService.renewToken()).pipe(share());
 }
 public renewToken(): Observable<User> {
     return this.renewToken$;
 }
+
+// 这段代码干了这些事
+
+// 1. 使用 defer 将一个 promise 包装为冷模式 Observable
+// 2. 把这个冷的 Observable 通过 share 变成热的
+// 这样就可以保证同一时间只有一个 renewToken 在进行
 ```
+
+RxJs 都是一种基于**约定**的异步逻辑，在混用的时候只是语法上会比较混乱。
+
+但是`async/await`是将 Promise 的异步逻辑转换为同步逻辑，如果和 RxJs 混用的话容易导致代码的逻辑混乱，不利于维护。
 
 ## [推荐] 重复数据避免多次请求
 
@@ -456,14 +468,14 @@ class DemoComponentB {
 }
 ```
 
-|  参考资料 |  |
-| --- | --- |
-|30天精通Rxjs| [https://ithelp.ithome.com.tw/users/20103367/ironman/1199](https://ithelp.ithome.com.tw/users/20103367/ironman/1199) |
-| Rxjs官网 | [https://rxjs-dev.firebaseapp.com/guide/overview](https://rxjs-dev.firebaseapp.com/guide/overview) |
-| RxJS Best Practices| [https://medium.com/better-programming/rxjs-best-practices-7f559d811514](https://medium.com/better-programming/rxjs-best-practices-7f559d811514) |
-| RxJS In Angular Best Practices | [https://medium.com/angular-in-depth/rx-js-best-practices-6a3b095ffb04](https://medium.com/angular-in-depth/rx-js-best-practices-6a3b095ffb04) |
-| awesome-rxjs | [https://github.com/RxJS-CN/awesome-rxjs](https://github.com/RxJS-CN/awesome-rxjs) |
+| 参考资料                                          |                                                                                                                                                                                |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 30 天精通 Rxjs                                    | [https://ithelp.ithome.com.tw/users/20103367/ironman/1199](https://ithelp.ithome.com.tw/users/20103367/ironman/1199)                                                           |
+| Rxjs 官网                                         | [https://rxjs-dev.firebaseapp.com/guide/overview](https://rxjs-dev.firebaseapp.com/guide/overview)                                                                             |
+| RxJS Best Practices                               | [https://medium.com/better-programming/rxjs-best-practices-7f559d811514](https://medium.com/better-programming/rxjs-best-practices-7f559d811514)                               |
+| RxJS In Angular Best Practices                    | [https://medium.com/angular-in-depth/rx-js-best-practices-6a3b095ffb04](https://medium.com/angular-in-depth/rx-js-best-practices-6a3b095ffb04)                                 |
+| awesome-rxjs                                      | [https://github.com/RxJS-CN/awesome-rxjs](https://github.com/RxJS-CN/awesome-rxjs)                                                                                             |
 | 6-ways-to-unsubscribe-from-observables-in-angular | [https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f](https://blog.bitsrc.io/6-ways-to-unsubscribe-from-observables-in-angular-ab912819a78f) |
-| 5 Common Mistakes with RxJS | [https://blog.bitsrc.io/5-common-mistakes-with-rxjs-1b09d4c19387](https://blog.bitsrc.io/5-common-mistakes-with-rxjs-1b09d4c19387) |
-| RxJS：所有订阅都需要调用 unsubscribe 取消订阅？ | [https://limeii.github.io/2019/08/rxjs-unsubscribe/](https://limeii.github.io/2019/08/rxjs-unsubscribe/) |
-| RxJS Patterns: Efficiency and Performance | [https://blog.bitsrc.io/rxjs-patterns-efficiency-and-performance-10bbf272c3fc](https://blog.bitsrc.io/rxjs-patterns-efficiency-and-performance-10bbf272c3fc) |
+| 5 Common Mistakes with RxJS                       | [https://blog.bitsrc.io/5-common-mistakes-with-rxjs-1b09d4c19387](https://blog.bitsrc.io/5-common-mistakes-with-rxjs-1b09d4c19387)                                             |
+| RxJS：所有订阅都需要调用 unsubscribe 取消订阅？   | [https://limeii.github.io/2019/08/rxjs-unsubscribe/](https://limeii.github.io/2019/08/rxjs-unsubscribe/)                                                                       |
+| RxJS Patterns: Efficiency and Performance         | [https://blog.bitsrc.io/rxjs-patterns-efficiency-and-performance-10bbf272c3fc](https://blog.bitsrc.io/rxjs-patterns-efficiency-and-performance-10bbf272c3fc)                   |
