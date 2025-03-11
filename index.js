@@ -222,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 默认展开所有文件夹
-    document.querySelectorAll('.folder-content').forEach(content => {
-        content.classList.add('open');
-    });
+    const firstFolder = document.querySelector('.folder-content');
+    firstFolder.classList.add('open');
 });
