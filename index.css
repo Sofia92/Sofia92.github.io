@@ -60,13 +60,6 @@ body {
     background: var(--bg-color);
 }
 
-/* PDF文件链接样式 */
-.sidebar a[data-path$=".pdf"]::after {
-    content: " 📄";
-    font-size: 0.9em;
-    opacity: 0.7;
-}
-
 .container {
     display: flex;
     flex: 1;
@@ -80,6 +73,7 @@ body {
     background: var(--sidebar-bg);
     padding: 20px;
     overflow-y: auto;
+    box-sizing: border-box;
     border-right: 1px solid var(--border-color);
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
     transition: all var(--animation-duration) ease;
@@ -391,5 +385,59 @@ body {
     80%,
     100% {
         content: '';
+    }
+}
+
+/* 响应式菜单样式 */
+.menu-toggle {
+    display: none;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.mobile {
+    height: 42px;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--sidebar-bg);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        display: block;
+        top: 42px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .content {
+        padding: 20px;
     }
 }

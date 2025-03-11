@@ -191,6 +191,10 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         loadContent(link.dataset.path);
+        // 在手机小屏幕模式下，点了folder-title后，收起 sidebar
+        if (window.innerWidth <= 768) {
+            document.querySelector('.sidebar').classList.remove('open');
+        }
     });
 });
 
@@ -200,6 +204,11 @@ document.querySelectorAll('.folder-title').forEach(title => {
         const content = title.nextElementSibling;
         content.classList.toggle('open');
     });
+});
+
+// 为菜单按钮添加点击事件
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.toggle('open');
 });
 
 // 页面加载完成后初始化
@@ -224,4 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 默认展开所有文件夹
     const firstFolder = document.querySelector('.folder-content');
     firstFolder.classList.add('open');
+
+    // 默认折叠菜单
+    if (window.innerWidth <= 768) {
+        document.querySelector('.sidebar').classList.remove('open');
+    }
 });
