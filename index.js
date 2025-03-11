@@ -155,6 +155,7 @@ async function loadContent(path) {
         // 使用配置的renderer渲染markdown
         const html = marked.parse(content, { renderer });
         document.getElementById('content').innerHTML = html;
+        hljs.highlightAll();
 
         // 高亮当前选中的文档
         document.querySelectorAll('.sidebar a').forEach(link => {
