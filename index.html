@@ -81,6 +81,13 @@
             background: var(--bg-color);
         }
 
+        /* PDF文件链接样式 */
+        .sidebar a[data-path$=".pdf"]::after {
+            content: " 📄";
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
         .container {
             display: flex;
             flex: 1;
@@ -444,6 +451,13 @@
                             <a href="#" data-path="./工具/企业微信机器人配置指南.md">企业微信机器人配置指南</a>
                             <a href="#" data-path="./工具/工具集.md">工具集</a>
                             <a href="#" data-path="./工具/项目架构规范工具sy-fe.md">项目架构规范工具sy-fe</a>
+                            <a href="#" data-path="./工具/前端 bug 分析可视化.pdf">前端 bug 分析可视化.pdf</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">项目集合</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./项目集合/质控数据平台.pdf">质控数据平台.pdf</a>
                         </div>
                     </li>
                     <li class="folder-item">
@@ -456,6 +470,7 @@
                             <a href="#" data-path="./工程化/定制化文章汇总.md">定制化文章汇总</a>
                             <a href="#" data-path="./工程化/标准产品扩展方案浅谈.md">标准产品扩展方案浅谈</a>
                             <a href="#" data-path="./工程化/现有产品定制化现有方案整理.md">现有产品定制化现有方案整理</a>
+                            <a href="#" data-path="./工程化/通用运行时插件化方案.pdf">通用运行时插件化方案.pdf</a>
                         </div>
                     </li>
                     <li class="folder-item">
@@ -628,6 +643,36 @@
         // 加载文档内容
         async function loadContent(path) {
             try {
+                // Check if the file is a PDF
+                if (path.toLowerCase().endsWith('.pdf')) {
+                    document.getElementById('content').innerHTML = `
+                        <object
+                            data="${path}"
+                            type="application/pdf"
+                            width="100%"
+                            height="800px"
+                            style="border: none;"
+                        >
+                            <p>
+                                看起来您的浏览器不支持嵌入式PDF。
+                                您可以 <a href="${path}" target="_blank">点击此处下载PDF文件</a>。
+                            </p>
+                        </object>
+                    `;
+                    
+                    // 高亮当前选中的文档
+                    document.querySelectorAll('.sidebar a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.dataset.path === path) {
+                            link.classList.add('active');
+                        }
+                    });
+
+                    // 更新 URL hash
+                    window.location.hash = path;
+                    return;
+                }
+
                 const response = await fetch(path);
                 if (!response.ok) {
                     throw new Error('文档加载失败');
