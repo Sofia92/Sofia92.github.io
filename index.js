@@ -105,7 +105,7 @@ async function loadContent(path) {
         // 创建新的渲染器并配置图片处理
         const renderer = new marked.Renderer();
         renderer.image = function (hrefObj, title, text) {
-            let href = hrefObj.href;
+            let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
             if (href && !href.startsWith('http') && !href.startsWith('/')) {
                 href = basePath + href;
             }

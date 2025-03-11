@@ -47,11 +47,16 @@
     }
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* 基础样式 */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -191,6 +196,7 @@ body {
 
 .content a {
     color: var(--link-hover);
+    word-break: break-word;
 }
 
 .content img {
@@ -388,25 +394,23 @@ body {
     }
 }
 
-/* 响应式菜单样式 */
-.menu-toggle {
-    display: none;
+.mobile {
     background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 1.2em;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
     width: 100%;
-    height: 100%;
-    text-align: left;
+    margin: 0;
+    padding: 0 10px;
 }
 
-.mobile {
-    height: 42px;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+/* 响应式菜单样式 */
+.mobile .menu-toggle {
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    background: inherit;
 }
 
 @media (min-width: 768px) {
