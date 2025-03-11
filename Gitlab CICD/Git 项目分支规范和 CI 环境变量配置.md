@@ -1,8 +1,3 @@
----
-sort: 7002
-title: Git项目分支规范和CI环境变量配置
----
-
 > 掌握公司 DevOps 流程的实战可以参考视频：[https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118](https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118)
 >
 > 最新的一些 Gitlab CI 使用技巧（查看日志，在线上 K8S 容器内使用命令行、更好的环境变量配置方案），可以查看博客： 《Gitlab 实用新特性推介》[http://platform-public.git.page.sy/team/blogs/gitlab-new-features/](http://platform-public.git.page.sy/team/blogs/gitlab-new-features/)

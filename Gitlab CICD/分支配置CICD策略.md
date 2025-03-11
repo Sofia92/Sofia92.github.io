@@ -1,8 +1,3 @@
----
-sort: 7003
-title: 分支配置CICD策略
----
-
 <details>
 <summary>事情是这样的</summary>
 周同学 2021-12-29 下午 10:25 

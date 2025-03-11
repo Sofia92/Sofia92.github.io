@@ -1,16 +1,4 @@
----
-sort: 4001
-title: 创建Git仓库
----
-
 # ![Setting up a repository](https://wac-cdn.atlassian.com/dam/jcr:064b3f9e-39d1-44f2-9fd1-c4dac0f9d42e/hero.svg?cdnVersion=1230)
-
-- 1[I.目标](#id-1.创建Git仓库-I.目标)
-- 2[II. 什么是 Git 仓库](#id-1.创建Git仓库-II.什么是Git仓库)
-- 3[III . 初始化一个 Git 仓库 - git init](#id-1.创建Git仓库-III.初始化一个Git仓库-gitinit)
-  - 3.1[课题 1.1  - 为本地已存在的项目初始化 Git 仓库](#id-1.创建Git仓库-课题1.1-为本地已存在的项目初始化Git仓库)
-- 4[IV. 克隆已存在的代码库 - git clone](#id-1.创建Git仓库-IV.克隆已存在的代码库-gitclone)
-  - 4.1[课题 1.2  - 克隆一个远端项目到本地](#id-1.创建Git仓库-课题1.2-克隆一个远端项目到本地)
 
 # I.目标
 

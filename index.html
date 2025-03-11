@@ -1,23 +1,165 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <!-- 移除对 assets/css/style.css 的引用 -->
-</head>
-<body>
-    <header>
-        <h1>{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
-    </header>
-    <main>
-        {% for post in site.posts %}
-            <article>
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                <p>{{ post.excerpt }}</p>
-            </article>
-        {% endfor %}
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sofia的知识库</title>
+        <!-- 添加 Markdown 渲染器 -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.6/marked.min.js"
+            integrity="sha512-rvRITpPeEKe4hV9M8XntuXX6nuohzqdR5O3W6nhjTLwkrx0ZgBQuaK4fv5DdOWzs2IaXsGt5h0+nyp9pEuoTXg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <!-- 添加代码高亮 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+        <!-- 添加代码字体 -->
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul class="folder">
+                    <li class="folder-item">
+                        <span class="folder-title">Angular开发者手册</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./Angular开发者手册/样式方案.md">样式方案</a>
+                            <a href="#" data-path="./Angular开发者手册/菜单配置.md">菜单配置</a>
+                            <a href="#" data-path="./Angular开发者手册/项目结构.md">项目结构</a>
+                            <a href="#" data-path="./Angular开发者手册/前后端通信.md">前后端通信</a>
+                            <a href="#" data-path="./Angular开发者手册/组件库使用.md">组件库使用</a>
+                            <a href="#" data-path="./Angular开发者手册/模块组件规范.md">模块组件规范</a>
+                            <a href="#" data-path="./Angular开发者手册/复杂领域模块组件规范.md">复杂领域模块组件规范</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">GIT</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./GIT/Gitlabfastforwardmerge实践.md">Gitlab fast forward merge实践</a>
+                            <a href="#" data-path="./GIT/Git操作规范.md">Git操作规范</a>
+                            <a href="#" data-path="./GIT/版本发布_checkList.md">版本发布checkList</a>
+                            <a href="#" data-path="./GIT/codeReview.md">code Review</a>
+                            <a href="#" data-path="./GIT/commit规范.md">commit规范</a>
+                            <a href="#" data-path="./GIT/githooks集成commit规范.md">githooks集成commit规范</a>
+                            <a href="#" data-path="./GIT/git命令.md">git命令</a>
+                            <a href="#" data-path="./GIT/merge规范.md">merge规范</a>
+                            <a href="#" data-path="./GIT/创建 Git 仓库.md">创建 Git 仓库</a>
+                            <a href="#" data-path="./GIT/安装.md">安装</a>
+                            <a href="#" data-path="./GIT/分支策略.md">分支策略</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">Gitlab CICD</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./Gitlab CICD/Git 项目分支规范和 CI 环境变量配置.md">Git 项目分支规范和 CI 环境变量配置</a>
+                            <a href="#" data-path="./Gitlab CICD/pipline说明.md">pipline说明</a>
+                            <a href="#" data-path="./Gitlab CICD/分支配置CICD策略.md">分支配置CICD策略</a>
+                            <a href="#" data-path="./Gitlab CICD/构建失败类型汇总.md">构建失败类型汇总</a>
+                            <a href="#" data-path="./Gitlab CICD/基础概念及最佳实践.md">基础概念及最佳实践</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">RxJS规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./RxJS规范/index.md">RxJS规范</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">工具</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./工具/企业微信机器人配置指南.md">企业微信机器人配置指南</a>
+                            <a href="#" data-path="./工具/工具集.md">工具集</a>
+                            <a href="#" data-path="./工具/项目架构规范工具sy-fe.md">项目架构规范工具sy-fe</a>
+                            <a href="#" data-path="./工具/前端 bug 分析可视化.pdf">前端 bug 分析可视化.pdf</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">项目集合</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./项目集合/质控数据平台.pdf">质控数据平台.pdf</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">工程化</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./工程化/[统一框架]功能型扩展设计方案_draft.md">统一框架功能型扩展设计方案</a>
+                            <a href="#" data-path="./工程化/前端bug类型分类.md">前端bug类型分类</a>
+                            <a href="#" data-path="./工程化/前端插件化v1.md">前端插件化v1</a>
+                            <a href="#" data-path="./工程化/用户行为分析.md">用户行为分析</a>
+                            <a href="#" data-path="./工程化/定制化文章汇总.md">定制化文章汇总</a>
+                            <a href="#" data-path="./工程化/标准产品扩展方案浅谈.md">标准产品扩展方案浅谈</a>
+                            <a href="#" data-path="./工程化/现有产品定制化现有方案整理.md">现有产品定制化现有方案整理</a>
+                            <a href="#" data-path="./工程化/通用运行时插件化方案.pdf">通用运行时插件化方案.pdf</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">架构规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./架构规范/Angular与四层架构模式.md">Angular与四层架构模式</a>
+                            <a href="#" data-path="./架构规范/angular.md">angular</a>
+                            <a href="#" data-path="./架构规范/项目架构规范.md">项目架构规范</a>
+                            <a href="#" data-path="./架构规范/前端架构规范调研.md">前端架构规范调研</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">安全规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./安全规范/index.md">安全规范</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">性能规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./性能规范/index.md">性能规范</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">编码规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./编码规范/index.md">编码规范</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">风格规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./风格规范/index.md">风格规范</a>
+                            <a href="#" data-path="./风格规范/lint-staged.md">lint-staged</a>
+                            <a href="#" data-path="./风格规范/tslint配置.md">tslint配置</a>
+                            <a href="#" data-path="./风格规范/风格规范检查lint配置.md">风格规范检查lint配置</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">项目相关</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./项目相关/文档规约/index.md">文档规约</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">后端相关</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./后端相关/数据库规范.md">数据库规范</a>
+                            <a href="#" data-path="./后端相关/后端安全规范.md">后端安全规范</a>
+                            <a href="#" data-path="./后端相关/日志使用建议.md">日志使用建议</a>
+                        </div>
+                    </li>
+                    <li class="folder-item">
+                        <span class="folder-title">流程规范</span>
+                        <div class="folder-content">
+                            <a href="#" data-path="./流程规范/项目流程规范.md">项目流程规范</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content" id="content">
+                <div style="text-align: center; color: #666; margin-top: 2rem;">
+                    👈 请从左侧选择一个文档以查看内容
+                </div>
+            </div>
+        </div>
+        <script src="./index.js"></script>
+    </body>
 </html>

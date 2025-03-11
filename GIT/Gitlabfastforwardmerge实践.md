@@ -1,8 +1,3 @@
----
-sort: 4009
-title: Gitlab Fast Forward Merge实践
----
-
 # ![](./Gitlabfastforwardmerge实践/1.png)
 
 # Gitlab fast forward merge 新实践

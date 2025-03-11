@@ -1,8 +1,3 @@
----
-sort: 4007
-title: Git Merge规范
----
-
 - **Merge Request** 代码检视针对新代码，防止代码库引进不合格代码，导致现有代码质量变差。
 - 由项目团队内部执行，每次代码合并稳定分支都要进行检视，以 [前端编码规范清单](../编码规范/index.md) 为检查项，使用 gitlab 的 MR 流程进行代码检视，每个 MR 必须经过项目的 owner 和最少一位成员均同意才能通过(如果项目只有一位成员，则可以自检通过)
 - 必须得完成发现问题悉数都修复后，才可进行 merge，可在 git Repo 设置 All discussions must be resolved 来实现约束
