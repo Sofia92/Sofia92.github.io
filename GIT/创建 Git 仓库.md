@@ -1,3 +1,8 @@
+---
+sort: 4001
+title: 创建Git仓库
+---
+
 # ![Setting up a repository](https://wac-cdn.atlassian.com/dam/jcr:064b3f9e-39d1-44f2-9fd1-c4dac0f9d42e/hero.svg?cdnVersion=1230)
 
 - 1[I.目标](#id-1.创建Git仓库-I.目标)

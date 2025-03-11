@@ -1,3 +1,8 @@
+---
+sort: 4004
+title: Git Commit规范
+---
+
 ##   一、前言
 
 Git 每次提交代码，都要写 Commit message（提交说明），否则就不允许提交。但是，一般来说，commit message 应该清晰明了，说明本次提交的目的。

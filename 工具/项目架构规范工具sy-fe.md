@@ -1,3 +1,8 @@
+---
+sort: 5002
+title: 项目架构规范工具sy-fe
+---
+
 基于前端架构规范生成的前端项目架构的工具，这里主要介绍安装、使用说明; 项目架构基于 Schematics+Angular8 搭建，目前支持项目，component，业务模块等的初始化; 本工具会按实际情况，持续更新。
 
 ## 前言
@@ -6,8 +11,8 @@
 - 确定 angular 版本 8
 - 全局安装 schematics 工具 npm install -g @angular-devkit/schematics-cli@12.0.0
 - 全局安装项目脚手架 npm install -g sy-fe@latest --registry https://npm-mirror.sh.synyi.com/
-- 脚手架根据  [项目架构规范](https://wiki.synyi.com/pages/viewpage.action?pageId=24935586)
-- CHANGELOG [http://git.sy/fe/sy-fe-cli/blob/master/CHANGELOG.md](http://git.sy/fe/sy-fe-cli/blob/master/CHANGELOG.md)
+- 脚手架根据  [项目架构规范](https://wiki.synyi.com/pages/viewpage.action?pageId=24935586)
+- CHANGELOG [http://git.sy/fe/sy-fe-cli/blob/master/CHANGELOG.md](http://git.sy/fe/sy-fe-cli/blob/master/CHANGELOG.md)
 - Demo 示例：[点击查看](http://auto-project-1815-dev.sy/guidance)
 
 ---

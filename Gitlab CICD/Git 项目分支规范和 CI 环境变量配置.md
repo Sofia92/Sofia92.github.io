@@ -1,3 +1,8 @@
+---
+sort: 7002
+title: Git项目分支规范和CI环境变量配置
+---
+
 > 掌握公司 DevOps 流程的实战可以参考视频：[https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118](https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118)
 >
 > 最新的一些 Gitlab CI 使用技巧（查看日志，在线上 K8S 容器内使用命令行、更好的环境变量配置方案），可以查看博客： 《Gitlab 实用新特性推介》[http://platform-public.git.page.sy/team/blogs/gitlab-new-features/](http://platform-public.git.page.sy/team/blogs/gitlab-new-features/)
@@ -37,7 +42,7 @@
 
 ![](./pipline/branch.png)
 
-如图所示，研发同学主要在 develop 分支上开发，如果有需要开发一个特定功能，可以在 develop 上分出一个 feature 分支（命名格式 “feaure/特性名”）
+如图所示，研发同学主要在 develop 分支上开发，如果有需要开发一个特定功能，可以在 develop 上分出一个 feature 分支（命名格式 "feaure/特性名"）
 
 当开发完毕需要提测时，测试同学将 develop 分支合并到 test 进行测试，如果有问题就在 develop 分支修复并由测试同学持续合并到 test 分支，直到问题修复可以发版
 
@@ -96,7 +101,7 @@
 
 通过 ENV_COMMON 前缀可以设置每个分支通用的环境变量
 
-如 ENV_COMMON_AuthEndPoint: [http://account-center.sy](http://account-center.sy),
+如 ENV_COMMON_AuthEndPoint: [http://account-center.sy](http://account-center.sy),
 
 该环境变量将会在每个分支生效
 

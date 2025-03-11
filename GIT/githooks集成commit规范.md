@@ -1,3 +1,8 @@
+---
+sort: 4005
+title: Git Hooks集成Commit规范
+---
+
 > Tips
 >
 > 根据 commit 规范，我们建立 git hooks 对 commit msg 检测 配置，效果如下，当我们配置不规范的 commit 时，会被提醒不允许 commit

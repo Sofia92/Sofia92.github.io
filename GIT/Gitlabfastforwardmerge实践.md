@@ -1,3 +1,8 @@
+---
+sort: 4009
+title: Gitlab Fast Forward Merge实践
+---
+
 # ![](./Gitlabfastforwardmerge实践/1.png)
 
 # Gitlab fast forward merge 新实践
@@ -22,13 +27,13 @@ fast forward:
 
 从结果上来看，这种合并方式就像是一个磁带机的磁头（develop 分支的头指针）从 C 点直接向前移动到了 F 点，就像磁带机的快进操作一样，因此称作快进合并（fast forward merge）。
 
-那么如果我们的磁带像下图一样“分叉”了该怎么快进呢？这个时候就需要后文介绍的 rebase 操作了。
+那么如果我们的磁带像下图一样"分叉"了该怎么快进呢？这个时候就需要后文介绍的 rebase 操作了。
 
 # ![](./Gitlabfastforwardmerge实践/4.png)
 
 ### rebase
 
-rebase 中文译名为变基，顾名思义，是让一个分支的“根基”发生改变。
+rebase 中文译名为变基，顾名思义，是让一个分支的"根基"发生改变。
 
 如果我们当前在`feat/foo`分支（HEAD 为 feat/foo），则执行`git rebase develop`会变成这样：
 
@@ -54,7 +59,7 @@ rebase 中文译名为变基，顾名思义，是让一个分支的“根基”�
 
 前置条件： gitlab 开启 fast forward merge（目前 EMR 前端项目已开启）
 
-1.  本地开发，产生若干 commit
+1. 本地开发，产生若干 commit
 
 2\. 提交代码发起 Merge Request 之前，尽量先拉取目标分支的代码并 rebase，解决冲突后再推送：
 

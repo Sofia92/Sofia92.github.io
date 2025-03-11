@@ -40,4 +40,4 @@ script: - rm package-lock.json || true - rm package.json || true - npm config se
 ```
 
 例子：
-![](./lint-ci.png)
+![](./lint-staged/lint-ci.png)

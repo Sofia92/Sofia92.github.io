@@ -1,3 +1,8 @@
+---
+sort: 1003
+title: Angular架构规范
+---
+
 架构规范
 
 ![](./angular/项目目录组织和NgModule依赖规范.png)
