@@ -57,46 +57,6 @@ marked.setOptions({
     renderer: new marked.Renderer()
 });
 
-// 加载并排序目录内容
-async function loadDirectoryContent(folderElement) {
-    const links = Array.from(folderElement.querySelectorAll('a'));
-    const sortedLinks = [];
-
-    for (const link of links) {
-        try {
-            const response = await fetch(link.dataset.path);
-            if (!response.ok) continue;
-
-            sortedLinks.push({
-                element: link,
-                sort: Infinity,
-                title: link.textContent
-            });
-        } catch (error) {
-            console.warn('Error loading file:', error);
-            sortedLinks.push({
-                element: link,
-                sort: Infinity,
-                title: link.textContent
-            });
-        }
-    }
-
-    // 排序链接
-    sortedLinks.sort((a, b) => {
-        if (a.sort === b.sort) {
-            return a.title.localeCompare(b.title, 'zh-CN');
-        }
-        return a.sort - b.sort;
-    });
-
-    // 重新插入排序后的链接
-    const parent = links[0].parentNode;
-    sortedLinks.forEach(({ element }) => {
-        parent.appendChild(element);
-    });
-}
-
 // 加载文档内容
 async function loadContent(path) {
     try {
@@ -178,14 +138,6 @@ async function loadContent(path) {
     }
 }
 
-// 初始化时对所有目录进行排序
-async function initializeFolders() {
-    const folderContents = document.querySelectorAll('.folder-content');
-    for (const folderContent of folderContents) {
-        await loadDirectoryContent(folderContent);
-    }
-}
-
 // 为所有链接添加点击事件
 document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -213,8 +165,6 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
 
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
-    initializeFolders();
-
     // 从 URL hash 加载初始文档
     if (window.location.hash) {
         const path = window.location.hash.slice(1);
