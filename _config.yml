@@ -1,0 +1,42 @@
+title: Sofia的知识库
+description: >- # this means to ignore newlines until "baseurl:"
+  知识库随笔
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sofia92.github.io" # the base hostname & protocol for your site
+theme: minima
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude these files and directories from the site
+exclude:
+  - .github/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+
+# Include these files and directories in the site
+include:
+  - _pages
+
+# Permalinks
+permalink: /:categories/:year/:month/:day/:title.html
+
+# Collections
+collections:
+  tools:
+    output: true
+    permalink: /:collection/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Sofia"
