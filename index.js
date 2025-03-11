@@ -1,26 +1,3 @@
-// 解析 front matter
-function parseFrontMatter(content) {
-    const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-    if (!match) return { attributes: {}, content };
-
-    try {
-        const attributes = {};
-        match[1].split('\n').forEach(line => {
-            const [key, value] = line.split(':').map(str => str.trim());
-            if (key && value) {
-                attributes[key] = isNaN(value) ? value : Number(value);
-            }
-        });
-        return {
-            attributes,
-            content: match[2]
-        };
-    } catch (e) {
-        console.error('Error parsing front matter:', e);
-        return { attributes: {}, content };
-    }
-}
-
 // 配置 marked
 marked.setOptions({
     highlight: function (code, lang) {
@@ -94,10 +71,7 @@ async function loadContent(path) {
         if (!response.ok) {
             throw new Error('文档加载失败');
         }
-        const text = await response.text();
-
-        // 解析 front matter
-        const { content } = parseFrontMatter(text);
+        const content = await response.text();
 
         // 获取文档所在目录路径
         const basePath = path.substring(0, path.lastIndexOf('/') + 1);
