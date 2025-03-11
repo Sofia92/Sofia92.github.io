@@ -1,39 +1,3 @@
-// 配置 marked
-marked.setOptions({
-    highlight: function (code, lang) {
-        if (lang) {
-            // 处理特殊语言标记
-            const languageMap = {
-                'ts': 'typescript',
-                'typescript': 'typescript',
-                'js': 'javascript',
-                'javascript': 'javascript',
-                'bash': 'bash',
-                'shell': 'bash',
-                'json': 'json',
-                'yaml': 'yaml',
-                'yml': 'yaml'
-            };
-
-            const mappedLang = languageMap[lang.toLowerCase()] || lang;
-
-            try {
-                if (hljs.getLanguage(mappedLang)) {
-                    return `<div class="code-header">${lang}</div><pre class="code-block"><code class="hljs language-${mappedLang}">${hljs.highlight(code, {
-                        language: mappedLang
-                    }).value}</code></pre>`;
-                }
-            } catch (error) {
-                console.warn('Language highlight error:', error);
-            }
-        }
-        // 如果没有指定语言或语言不支持，尝试自动检测
-        return `<pre><code class="hljs">${hljs.highlightAuto(code).value}</code></pre>`;
-    },
-    breaks: true,
-    renderer: new marked.Renderer()
-});
-
 // 加载文档内容
 async function loadContent(path) {
     try {
@@ -78,16 +42,16 @@ async function loadContent(path) {
 
         // 创建新的渲染器并配置图片处理
         const renderer = new marked.Renderer();
-        // renderer.image = function (hrefObj, title, text) {
-        //     let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
-        //     if (href && !href.startsWith('http') && !href.startsWith('/')) {
-        //         href = basePath + href;
-        //     }
-        //     return `<img src="${href}" title="${title || ''}" alt="${text || ''}" style="max-width: 100%;">`;
-        // };
-
+        renderer.image = function (hrefObj, title, text) {
+            let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
+            if (href && !href.startsWith('http') && !href.startsWith('/')) {
+                href = basePath + href;
+            }
+            return `<img src="${href}" title="${title || ''}" alt="${text || ''}" style="max-width: 100%;">`;
+        };
         // 使用配置的renderer渲染markdown
-        const html = marked.parse(content, { renderer });
+        marked.use({ renderer });
+        const html = marked.parse(content);
         document.getElementById('content').innerHTML = html;
         hljs.highlightAll();
 
