@@ -78,13 +78,13 @@ async function loadContent(path) {
 
         // 创建新的渲染器并配置图片处理
         const renderer = new marked.Renderer();
-        renderer.image = function (hrefObj, title, text) {
-            let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
-            if (href && !href.startsWith('http') && !href.startsWith('/')) {
-                href = basePath + href;
-            }
-            return `<img src="${href}" title="${title || ''}" alt="${text || ''}" style="max-width: 100%;">`;
-        };
+        // renderer.image = function (hrefObj, title, text) {
+        //     let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
+        //     if (href && !href.startsWith('http') && !href.startsWith('/')) {
+        //         href = basePath + href;
+        //     }
+        //     return `<img src="${href}" title="${title || ''}" alt="${text || ''}" style="max-width: 100%;">`;
+        // };
 
         // 使用配置的renderer渲染markdown
         const html = marked.parse(content, { renderer });
