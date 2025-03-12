@@ -1,6 +1,6 @@
-# ![](./Gitlabfastforwardmerge实践/1.png)
-
 # Gitlab fast forward merge 新实践
+
+# ![](./Gitlabfastforwardmerge实践/1.png)
 
 ## 背景与相关知识
 

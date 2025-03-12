@@ -163,7 +163,7 @@ body {
 /* 内容区域样式 */
 .content {
     flex: 1;
-    padding: 40px;
+    padding: 0 40px;
     overflow-y: auto;
     background: var(--bg-color);
     font-size: 16px;

@@ -55,6 +55,10 @@ async function loadContent(path) {
         document.getElementById('content').innerHTML = html;
         hljs.highlightAll();
 
+        // 动态更新浏览器 title 为文档名称
+        const title = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+        document.title = `Sofia的知识库 | ${title}`;
+
         // 高亮当前选中的文档
         document.querySelectorAll('.sidebar a').forEach(link => {
             link.classList.remove('active');
