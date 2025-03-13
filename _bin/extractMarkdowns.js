@@ -62,6 +62,6 @@ function deep(dir, parentDir) {
 }
 
 let markdownMap = new Map(), pdfMap = new Map();
-deep('../_posts', '');
+deep('../docs/_posts', '');
 
-fs.writeFileSync('_site/list.json', JSON.stringify([...markdownMap.values()].concat([...pdfMap.values()])));
+fs.writeFileSync('docs/list.json', JSON.stringify([...markdownMap.values()].concat([...pdfMap.values()])));
