@@ -83,7 +83,7 @@ loadData().then(data => {
             window.open(link, '_blank');
         }
         if (!link && category) {
-            location.assign(`${location.origin}/_site/index?category=${category}`);
+            location.assign(`${location.origin}/docs/index?category=${category}`);
             return;
         }
     });
