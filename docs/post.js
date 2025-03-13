@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .forEach(doc => {
                     const fileElement = document.createElement('li');
                     fileElement.className = 'folder-item';
-                    fileElement.innerHTML = `<a href="#" data-path="blob/master/${doc.path}">${doc.title}</a>`;
+                    fileElement.innerHTML = `<a href="#" data-path="${doc.path}">${doc.title}</a>`;
                     filesContainer.appendChild(fileElement);
                 });
             if (category) {

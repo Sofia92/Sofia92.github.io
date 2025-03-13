@@ -41,7 +41,7 @@ function deep(dir) {
             const nameKey = Symbol();
             const isMarkdown = item.endsWith('.md'), isPdf = item.endsWith('.pdf');
             const relativePath = path.relative(path.join(__dirname, '../'), itemPath);
-            const filePath = `https://github.com/Sofia92/Sofia92.github.io/blob/master/${relativePath}`;
+            const filePath = `https://github.com/Sofia92/Sofia92.github.io/raw/refs/heads/master/${relativePath}`;
             if (isMarkdown) {
                 const title = item.split('.md')[0];
                 const response = fs.readFileSync(itemPath, 'utf-8');
