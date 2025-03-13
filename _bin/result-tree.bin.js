@@ -8,14 +8,15 @@ function generateUUID() {
 function transform(sourceJSONPath) {
     const file = fs.readFileSync(sourceJSONPath, 'utf-8');
     const data = JSON.parse(file);
-    const firstNode = { id: "Frontend", label: "Frontend", children: [] };
+    const firstNode = { id: "Frontend", label: "Frontend", name: "Frontend", value: 100, children: [] };
     data.forEach(item => {
         firstNode.children.push({
             id: item.category,
             label: item.title,
+            name: item.title,
             link: item.link || null,
-            category: item.category,
-            children: item.items.map(_item => ({ id: generateUUID(), label: _item.text, link: _item.link || null, category: item.category }))
+            category: item.category, value: 80,
+            children: item.items.map(_item => ({ id: generateUUID(), label: _item.text, name: _item.text, link: _item.link || null, value: 40, category: item.category }))
         })
     });
     return firstNode;
