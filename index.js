@@ -1,133 +1,91 @@
-// 加载文档内容
-async function loadContent(path) {
-    try {
-        // Check if the file is a PDF
-        if (path.toLowerCase().endsWith('.pdf')) {
-            document.getElementById('content').innerHTML = `
-                <object
-                    data="${path}"
-                    type="application/pdf"
-                    width="100%"
-                    height="800px"
-                    style="border: none;"
-                >
-                    <p>
-                        看起来您的浏览器不支持嵌入式PDF。
-                        您可以 <a href="${path}" target="_blank">点击此处下载PDF文件</a>。
-                    </p>
-                </object>
-            `;
-
-            // 高亮当前选中的文档
-            document.querySelectorAll('.sidebar a').forEach(link => {
-                link.classList.remove('active');
-                if (link.dataset.path === path) {
-                    link.classList.add('active');
-                }
-            });
-
-            // 更新 URL hash
-            window.location.hash = path;
-            return;
-        }
-
-        const response = await fetch(path);
-        if (!response.ok) {
-            throw new Error('文档加载失败');
-        }
-        const content = await response.text();
-
-        // 获取文档所在目录路径
-        const basePath = path.substring(0, path.lastIndexOf('/') + 1);
-
-        // 创建新的渲染器并配置图片处理
-        const renderer = new marked.Renderer();
-        renderer.image = function (hrefObj, title, text) {
-            let href = typeof hrefObj == 'object' ? hrefObj.href : hrefObj;
-            if (href && !href.startsWith('http') && !href.startsWith('/')) {
-                href = basePath + href;
-            }
-            return `<img src="${href}" title="${title || ''}" alt="${text || ''}" style="max-width: 100%;">`;
-        };
-        // 使用配置的renderer渲染markdown
-        marked.use({ renderer });
-        const html = marked.parse(content);
-        document.getElementById('content').innerHTML = html;
-        hljs.highlightAll();
-
-        // 动态更新浏览器 title 为文档名称
-        const title = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
-        document.title = `Sofia的知识库 | ${title}`;
-
-        // 高亮当前选中的文档
-        document.querySelectorAll('.sidebar a').forEach(link => {
-            link.classList.remove('active');
-            if (link.dataset.path === path) {
-                link.classList.add('active');
-            }
-        });
-
-        // 更新 URL hash
-        window.location.hash = path;
-    } catch (error) {
-        document.getElementById('content').innerHTML = `
-            <div style="color: #dc3545; padding: 2rem; text-align: center;">
-                <h3>😕 加载失败</h3>
-                <p>${error.message}</p>
-                <p>请确保文档文件存在并且可以访问。</p>
-            </div>
-        `;
+async function loadData() {
+    const response = await fetch('./result-tree.json');
+    if (!response.ok) {
+        throw new Error('文档加载失败');
     }
+    return await response.json();
 }
 
-// 为所有链接添加点击事件
-document.querySelectorAll('.sidebar a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        loadContent(link.dataset.path);
-        // 在手机小屏幕模式下，点了folder-title后，收起 sidebar
-        if (window.innerWidth <= 768) {
-            document.querySelector('.sidebar').classList.remove('open');
+const calcStrLen = str => {
+    let len = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str.charCodeAt(i) > 0 && str.charCodeAt(i) < 128) {
+            len++;
+        } else {
+            len += 2;
+        }
+    }
+    return len;
+};
+
+function getTextWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+}
+loadData().then(data => {
+    const width = document.body.clientWidth;
+    const height = 900;
+
+    const graph = new G6.TreeGraph({
+        container: 'container',
+        width,
+        height,
+        pixelRatio: 12,
+        modes: {
+            default: ['drag-canvas', 'drag-node']
+        },
+        defaultEdge: {
+            shape: 'cubic-horizontal',
+            color: '#F6BD16'
+        },
+        layout: {
+            type: 'dendrogram',
+            preventOverlap: true,
+            direction: 'H', // H / V / LR / RL / TB / BT
+            nodeSep: 50,
         }
     });
-});
 
-// 为文件夹标题添加点击事件
-document.querySelectorAll('.folder-title').forEach(title => {
-    title.addEventListener('click', () => {
-        const content = title.nextElementSibling;
-        content.classList.toggle('open');
-    });
-});
+    graph.node(function (node) {
+        const label = node.label || node.id;
+        const width = Math.max(120, getTextWidth(label, "normal 13px arial"));
 
-// 为菜单按钮添加点击事件
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.sidebar').classList.toggle('open');
-});
-
-// 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
-    // 从 URL hash 加载初始文档
-    if (window.location.hash) {
-        const path = window.location.hash.slice(1);
-        loadContent(path);
-
-        // 打开包含当前文档的文件夹
-        const link = document.querySelector(`a[data-path="${path}"]`);
-        if (link) {
-            const folderContent = link.closest('.folder-content');
-            if (folderContent) {
-                folderContent.classList.add('open');
+        const shape = node.depth < 2 ? 'rect' : 'rect';
+        return {
+            label,
+            shape,
+            size: [width, 32],
+            labelCfg: {
+                positions: 'left',
+                style: {
+                    fontSize: 12
+                }
+            },
+            style: {
+                fill: '#ffffff',
+                stroke: '#888',
             }
+        };
+    });
+
+    graph.data(data);
+    graph.render();
+    graph.fitView();
+
+    graph.on('node:click', evt => {
+        const { item } = evt;
+        const { link, category } = item.getModel();
+        if (link) {
+            window.open(link, '_blank');
         }
-    }
+        if (!link && category) {
+            location.assign(`${location.origin}/_site/index?category=${category}`);
+            return;
+        }
+    });
 
-    // 默认展开所有文件夹
-    const firstFolder = document.querySelector('.folder-content');
-    firstFolder.classList.add('open');
-
-    // 默认折叠菜单
-    if (window.innerWidth <= 768) {
-        document.querySelector('.sidebar').classList.remove('open');
-    }
-});
+})

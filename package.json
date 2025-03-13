@@ -1,0 +1,11 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "description": "知识库",
+  "main": "index.js",
+  "scripts": {
+    "build": "node _bin/extractMarkdowns.js"
+  },
+  "author": "Sofia92",
+  "license": "ISC"
+}

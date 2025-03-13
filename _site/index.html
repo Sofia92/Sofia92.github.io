@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>Sofia的知识库</title>
         <meta name="keywords" content="sofia, Web前端开发, Angular, 个人博客, JavaScript, HTML, CSS, 前端框架, 编程, 技术分享, 前端工程师">
         <meta name="description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
+        <!-- 添加代码高亮 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.6/marked.min.js"></script>
+        <!-- 添加代码字体 -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="./post.css">
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="Sofia的知识库">
         <meta property="og:description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
@@ -27,7 +34,7 @@
         }
         </script>
         <!-- Favicon -->
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./favicon_io/favicon-32x32.png" type="image/x-icon">
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-24JQLD6EL4"></script>
         <script>
@@ -37,10 +44,34 @@
 
             gtag('config', 'G-24JQLD6EL4');
         </script>
-        <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g6-3.2.3/build/g6.js"></script>
     </head>
     <body>
-        <div id="container"></div>
-        <script src="./index.js"></script>
+        <header class="layout_header flex j-b a-c">
+            <h4>Sofia的知识库</h4>
+            <button class="menu-toggle mobile-only">☰</button>
+        </header>
+        <div class="container">
+            <div class="sidebar">
+                <header class="sticky top">
+                    <p onclick="window.location.href='/'">回首页</p>
+                    <p>分类:
+                        <span id="breadcrumb_category">未分类</span>
+                    </p>
+                </header>
+                <ul class="folder"></ul>
+            </div>
+            <div class="content" id="content">
+                <pre>
+                    <code class="language-html">
+                        <span>Hello World!</span>
+                        <span>我是Sofia</span>
+                    </code>
+                </pre>
+                <div style="text-align: center; color: #666; margin-top: 2rem;">
+                    👈 请从左侧选择一个文档以查看内容
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./post.js"></script>
     </body>
 </html>
