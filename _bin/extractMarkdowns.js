@@ -40,7 +40,7 @@ function deep(dir) {
         } else {
             const nameKey = Symbol();
             const isMarkdown = item.endsWith('.md'), isPdf = item.endsWith('.pdf');
-            const relativePath = path.relative(path.join(__dirname, '../docs'), itemPath);
+            const relativePath = path.relative(path.join(__dirname, '../'), itemPath);
             const filePath = `./${relativePath}`;
             if (isMarkdown) {
                 const title = item.split('.md')[0];
