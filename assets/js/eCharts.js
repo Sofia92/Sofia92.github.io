@@ -25,19 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     data: data.children,
                     nodeClick: false,
                     leafDepth: 1,
+                    drillDownIcon:' ',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
                     label: {
-                        show: true
+                        show: true,
+                        overflow: "breakAll"
                     },
                     breadcrumb: {
                         show: true
                     },
                     itemStyle: {
                         borderRadius: 4,
-                        gapWidth: 12,
-                    },
-                    scaleLimit: {
-                        min: 40,
-                        max: 80
+                        gapWidth: 8,
                     }
                 }
             ]
