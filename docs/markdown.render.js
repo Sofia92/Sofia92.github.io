@@ -19,8 +19,16 @@ function parseFrontMatter(content) {
         return { attributes: {}, content };
     }
 }
+
+function ElementGetter() {
+    return {
+        contentElement: document.querySelector('#content')
+    }
+}
 // 加载文档内容
 export async function loadContent(path) {
+    const { contentElement } = ElementGetter();
+    contentElement.classList.add('loading');
     try {
         // Check if the file is a PDF
         if (path.toLowerCase().endsWith('.pdf')) {
@@ -51,8 +59,8 @@ export async function loadContent(path) {
             window.location.hash = path;
             return;
         }
-
         const response = await fetch(path);
+        contentElement.classList.remove('loading');
         if (!response.ok) {
             throw new Error('文档加载失败');
         }
@@ -97,5 +105,7 @@ export async function loadContent(path) {
                 <p>请确保文档文件存在并且可以访问。</p>
             </div>
         `;
+    } finally {
+        contentElement.classList.remove('loading');
     }
 }
