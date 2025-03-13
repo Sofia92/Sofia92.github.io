@@ -1,7 +1,3 @@
----
- title: 风格规范检查 tslint 规则
- category: CodeQuality
----
 
 
 当前文档对应版本 0.0.0-beta-dev.194285

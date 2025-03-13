@@ -1,7 +1,3 @@
----
- title: Git commit hook
- category: VersionControl
----
 
 
 > Tips

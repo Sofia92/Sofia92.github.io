@@ -1,7 +1,3 @@
----
- title: 风格规范检查 tslint 集成 Gitlab CICD
- category: CodeQuality
----
 
 # 风格规范检查工具集成 CICD
 

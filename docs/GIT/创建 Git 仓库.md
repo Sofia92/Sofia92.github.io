@@ -1,7 +1,3 @@
----
- title: 创建 Git 仓库
- category: VersionControl
----
 
 # ![Setting up a repository](https://wac-cdn.atlassian.com/dam/jcr:064b3f9e-39d1-44f2-9fd1-c4dac0f9d42e/hero.svg?cdnVersion=1230)
 

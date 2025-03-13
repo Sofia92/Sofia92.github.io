@@ -1,7 +1,3 @@
----
- title: 分支配置CICD策略
- category: DevOps
----
 
 <details>
 <summary>事情是这样的</summary>

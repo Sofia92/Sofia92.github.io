@@ -1,7 +1,3 @@
----
- title: Git operations
- category: VersionControl
----
 
 ## 一．版本号命名规则
 

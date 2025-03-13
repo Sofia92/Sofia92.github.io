@@ -1,7 +1,3 @@
----
- title: Git Merge Request
- category: VersionControl
----
 
 
 - **Merge Request** 代码检视针对新代码，防止代码库引进不合格代码，导致现有代码质量变差。

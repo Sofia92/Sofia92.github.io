@@ -1,7 +1,3 @@
----
- title: RxJS规范
- category: CodeQuality
----
 
 ## [必须]组件销毁时取消订阅
 

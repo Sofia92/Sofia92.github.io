@@ -1,7 +1,3 @@
----
- title: Git commit
- category: VersionControl
----
 
 ##   一、前言
 

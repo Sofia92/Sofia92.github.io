@@ -1,7 +1,3 @@
----
- title: Git fast forward merge
- category: VersionControl
----
 
 
 # Gitlab fast forward merge 新实践
