@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs')
-const path = require('path')
+const path = require('path');
+const process = require('process');
 function parseFrontMatter(content) {
     const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     if (!match) return { attributes: {}, content };
@@ -28,33 +29,33 @@ function getExtension(filename) {
     return ext[ext.length - 1];
 }
 
-function deep(dir, parentDir) {
-    const arr = fs.readdirSync(path.join(__dirname, dir));
-    //   .filter(fileName => !!['.md', '.pdf'].includes(fileName))
+function deep(dir) {
+    const folders = fs.readdirSync(dir);
 
-    arr.forEach(item => {
-        const itemPath = path.join(__dirname, dir + '/' + item);
+    folders.forEach(item => {
+        const itemPath = path.join(dir, item);
         const isDir = fs.statSync(itemPath).isDirectory()
         if (isDir) {
-            const temp = dir + '/' + item + '/'
-            deep(temp, parentDir + item + '/')
+            deep(itemPath);
         } else {
             const nameKey = Symbol();
             const isMarkdown = item.endsWith('.md'), isPdf = item.endsWith('.pdf');
+            const relativePath = path.relative(path.join(__dirname, '../'), itemPath);
+            const filePath = `https://github.com/Sofia92/Sofia92.github.io/blob/master/${relativePath}`;
             if (isMarkdown) {
                 const title = item.split('.md')[0];
                 const response = fs.readFileSync(itemPath, 'utf-8');
                 const { attributes } = parseFrontMatter(response);
                 markdownMap.set(nameKey, {
                     title, category: null, ...attributes,
-                    isMarkdown, isPdf, path: dir + item
+                    isMarkdown, isPdf, path: filePath
                 });
             }
             if (isPdf) {
                 const title = item.split('.pdf')[0];
                 markdownMap.set(nameKey, {
                     title, category: null, ...attributes,
-                    isMarkdown, isPdf, path: dir + item
+                    isMarkdown, isPdf, path: filePath
                 });
             }
         }
@@ -62,6 +63,6 @@ function deep(dir, parentDir) {
 }
 
 let markdownMap = new Map(), pdfMap = new Map();
-deep('../docs/_posts', '');
+deep(path.join(__dirname, '../_posts'));
 
 fs.writeFileSync('docs/list.json', JSON.stringify([...markdownMap.values()].concat([...pdfMap.values()])));
