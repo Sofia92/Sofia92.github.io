@@ -1,3 +1,8 @@
+---
+ title: Angular项目架构规范Draft
+ category: Framework
+---
+
 # 一. 总体项目结构
 
 ![](./Angular项目架构规范/fe-architecture.jpg)

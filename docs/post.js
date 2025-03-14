@@ -21,7 +21,8 @@ const categoryMap = new Map([
     ['DevOps', 'DevOps 和部署'],
     ['A11y', '可访问性和国际化'],
     ['Team', '软技能'],
-    ['PDFs', 'PDF附件']
+    ['PDFs', 'PDF附件'],
+    ['Tools', '工具']
 ])
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {

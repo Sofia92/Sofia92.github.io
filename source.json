@@ -309,5 +309,10 @@
         "category": "PDFs",
         "title": "PDF附件",
         "items": []
+    },
+    {
+        "category": "Tools",
+        "title": "工具",
+        "items": []
     }
 ]
