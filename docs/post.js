@@ -20,7 +20,8 @@ const categoryMap = new Map([
     ['Mobile', '移动端开发'],
     ['DevOps', 'DevOps 和部署'],
     ['A11y', '可访问性和国际化'],
-    ['Team', '软技能']
+    ['Team', '软技能'],
+    ['PDFs', 'PDF附件']
 ])
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,13 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 category = searchParams.get('category') || null;
             }
             const filesContainer = document.querySelector('.folder');
-            docs.filter(doc => doc.category == category)
-                .forEach(doc => {
-                    const fileElement = document.createElement('li');
-                    fileElement.className = 'folder-item';
-                    fileElement.innerHTML = `<a href="#" data-path="${doc.path}">${doc.title}</a>`;
-                    filesContainer.appendChild(fileElement);
-                });
+            let categoryDocs = docs.filter(doc => doc.category == category);
+            if (category == 'PDFs') {
+                categoryDocs = docs.filter(doc => doc.isPdf);
+            }
+
+            categoryDocs.forEach(doc => {
+                const fileElement = document.createElement('li');
+                fileElement.className = 'folder-item';
+                fileElement.innerHTML = `<a href="#" data-path="${doc.path}">${doc.title}</a>`;
+                filesContainer.appendChild(fileElement);
+            });
             if (category) {
                 document.querySelector('#breadcrumb_category').innerHTML = categoryMap.get(category)
             }

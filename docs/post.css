@@ -202,7 +202,7 @@ body {
     line-height: 1.7;
     position: relative;
     overflow: hidden auto;
-    max-width: calc(100% - 380px);
+    max-width: calc(100% - 300px);
 }
 
 .content h1 {
@@ -459,6 +459,7 @@ body {
 
     .content {
         padding: 20px;
+        max-width: 100%;
     }
 }
 

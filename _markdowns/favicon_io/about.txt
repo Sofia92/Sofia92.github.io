@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Stick
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/stick/v18/Qw3TZQpMCyTtJSvfvPVDMPoF.ttf
-- Font License: undefined)
