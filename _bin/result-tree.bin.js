@@ -8,9 +8,9 @@ function generateUUID() {
 function transform(sourceJSONPath) {
     const file = fs.readFileSync(sourceJSONPath, 'utf-8');
     const data = JSON.parse(file);
-    const firstNode = { id: "Frontend", label: "Frontend", name: "Frontend", value: 100, children: [] };
+    const res = [];
     data.forEach(item => {
-        firstNode.children.push({
+        res.push({
             id: item.category,
             label: item.title,
             name: item.title,
@@ -19,7 +19,7 @@ function transform(sourceJSONPath) {
             children: item.items.map(_item => ({ id: generateUUID(), label: _item.text, name: _item.text, link: _item.link || null, value: 40, category: item.category }))
         })
     });
-    return firstNode;
+    return res;
 }
 
 const result = transform('./source.json');

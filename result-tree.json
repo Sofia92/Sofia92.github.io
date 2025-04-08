@@ -1,1 +1,715 @@
-{"id":"Frontend","label":"Frontend","name":"Frontend","value":100,"children":[{"id":"Internet","label":"Internet","name":"Internet","link":null,"category":"Internet","value":80,"children":[{"id":"a9a6e5c0-e601-490c-b1c1-62e0103c8bbd","label":"How does the internet work","name":"How does the internet work","link":"https://roadmap.sh/guides/what-is-internet","value":40,"category":"Internet"},{"id":"540c5c20-747f-415a-94c9-cb6b2a767ce6","label":"What is HTTP","name":"What is HTTP","link":null,"value":40,"category":"Internet"},{"id":"487ede04-924c-45e2-8bd5-55e46369187d","label":"Packets, Routing, and Reliability","name":"Packets, Routing, and Reliability","link":null,"value":40,"category":"Internet"},{"id":"06eee071-1db6-483c-b738-287051ebd1de","label":"What is Domain Name","name":"What is Domain Name","link":null,"value":40,"category":"Internet"},{"id":"4dfeaf88-8497-4265-a98a-845765a1588c","label":"What is hosting","name":"What is hosting","link":null,"value":40,"category":"Internet"},{"id":"de9555a0-d57a-4e6e-98a9-9d478cb34a39","label":"Browsers and how they work","name":"Browsers and how they work","link":null,"value":40,"category":"Internet"}]},{"id":"Infrastructure","label":"基础知识","name":"基础知识","link":null,"category":"Infrastructure","value":80,"children":[{"id":"fca74869-f000-4c42-bc25-903b10a0c011","label":"HTML: 基础、语义化标签、表单、Accessibility、SEO等","name":"HTML: 基础、语义化标签、表单、Accessibility、SEO等","link":null,"value":40,"category":"Infrastructure"},{"id":"1cfeb8b7-fa65-455d-b2a7-436d68edab8e","label":"CSS: 基础、布局、动画、响应式设计等","name":"CSS: 基础、布局、动画、响应式设计等","link":null,"value":40,"category":"Infrastructure"},{"id":"1bf37a79-f412-4401-8cfc-f133087d42f5","label":"JavaScript: 基础、ES6+ 语法、DOM 操作、事件处理、异步编程（Promise、async/await）等","name":"JavaScript: 基础、ES6+ 语法、DOM 操作、事件处理、异步编程（Promise、async/await）等","link":null,"value":40,"category":"Infrastructure"}]},{"id":"VersionControl","label":"版本管理","name":"版本管理","link":null,"category":"VersionControl","value":80,"children":[{"id":"1b69a77e-cd1c-4977-aa7e-76fcf5d55753","label":"Git: 基本命令、分支管理、合并冲突等","name":"Git: 基本命令、分支管理、合并冲突等","link":null,"value":40,"category":"VersionControl"},{"id":"34818221-d70d-495e-959f-52c7a2ef6f49","label":"GitHub/GitLab: 代码托管、CI/CD 集成等","name":"GitHub/GitLab: 代码托管、CI/CD 集成等","link":null,"value":40,"category":"VersionControl"},{"id":"a3dba3d9-6ffc-4624-b686-d77472b4e61e","label":"包管理: npm、pnpm、yarn","name":"包管理: npm、pnpm、yarn","link":null,"value":40,"category":"VersionControl"}]},{"id":"Framework","label":"前端框架和库","name":"前端框架和库","link":null,"category":"Framework","value":80,"children":[{"id":"8413f4df-7616-4318-80f6-012ad9cd3d53","label":"React: Hooks、Context API、React Router、Redux 等","name":"React: Hooks、Context API、React Router、Redux 等","link":null,"value":40,"category":"Framework"},{"id":"77d4a361-7e52-48ee-a179-b85c310bdd73","label":"Vue.js: Vue 3、Composition API、Vue Router、Vuex 等","name":"Vue.js: Vue 3、Composition API、Vue Router、Vuex 等","link":null,"value":40,"category":"Framework"},{"id":"29406eef-a2aa-41ab-88f7-de00d5297673","label":"Angular: 模块、服务、依赖注入、路由、RxJS 等","name":"Angular: 模块、服务、依赖注入、路由、RxJS 等","link":null,"value":40,"category":"Framework"},{"id":"a49f5a32-1af0-4a3b-9183-319ffc17e218","label":"Svelte","name":"Svelte","link":null,"value":40,"category":"Framework"}]},{"id":"CSSArchitecture","label":"CSSArchitecture","name":"CSSArchitecture","link":null,"category":"CSSArchitecture","value":80,"children":[{"id":"e36977f3-0b4c-4e64-842e-0b3c4d94f7c9","label":"Writing css: Tailwind","name":"Writing css: Tailwind","link":null,"value":40,"category":"CSSArchitecture"},{"id":"d56a7386-7bea-4cb6-be3d-1076796dc9dc","label":"BEM","name":"BEM","link":null,"value":40,"category":"CSSArchitecture"},{"id":"844c3c5e-b45b-4b99-b7c3-f4c342ff3d8c","label":"Preprocessors: scss、less、postCss","name":"Preprocessors: scss、less、postCss","link":null,"value":40,"category":"CSSArchitecture"}]},{"id":"CodeQuality","label":"代码质量","name":"代码质量","link":null,"category":"CodeQuality","value":80,"children":[{"id":"ff7e2425-43e6-448d-98f4-5ee6851ce188","label":"规范","name":"规范","link":null,"value":40,"category":"CodeQuality"},{"id":"ce109555-d0c4-48f7-a771-4536b6e077ee","label":"Linters and Formatters: Prettier、ESLint","name":"Linters and Formatters: Prettier、ESLint","link":null,"value":40,"category":"CodeQuality"}]},{"id":"BuildTools","label":"构建工具","name":"构建工具","link":null,"category":"BuildTools","value":80,"children":[{"id":"cf136454-cf67-4680-b6f9-6002a4937e93","label":"Webpack: 模块打包、插件、加载器等","name":"Webpack: 模块打包、插件、加载器等","link":null,"value":40,"category":"BuildTools"},{"id":"27252c36-162b-415f-b82d-35f56b50e199","label":"Vite: 快速构建工具，适用于现代前端开发","name":"Vite: 快速构建工具，适用于现代前端开发","link":null,"value":40,"category":"BuildTools"},{"id":"3119a2cf-525a-429a-841b-998427d9d359","label":"Babel: JavaScript 编译器，支持最新语法","name":"Babel: JavaScript 编译器，支持最新语法","link":null,"value":40,"category":"BuildTools"}]},{"id":"Testing","label":"测试","name":"测试","link":null,"category":"Testing","value":80,"children":[{"id":"a1340b9c-c642-4f32-821f-d73de856170c","label":"JavaScript测试框架: Jest、Vitest","name":"JavaScript测试框架: Jest、Vitest","link":null,"value":40,"category":"Testing"},{"id":"a8ebd64e-cebd-4ee6-8b78-cb119dfdd9ac","label":"端到端测试框架: Playwright、Cypress","name":"端到端测试框架: Playwright、Cypress","link":null,"value":40,"category":"Testing"}]},{"id":"Authentication","label":"身份验证和授权策略","name":"身份验证和授权策略","link":null,"category":"Authentication","value":80,"children":[{"id":"4c728a38-5288-4f83-ade6-3836ae34aac0","label":"Basic Authentication","name":"Basic Authentication","link":null,"value":40,"category":"Authentication"},{"id":"0a1e9e35-cb8e-4f70-b66d-3ea98f0dad3d","label":"Session Based Authentication","name":"Session Based Authentication","link":null,"value":40,"category":"Authentication"},{"id":"457856c4-49a0-4b20-9460-670f14966535","label":"Token Based Authentication","name":"Token Based Authentication","link":null,"value":40,"category":"Authentication"},{"id":"ebfa918e-0a66-46ed-a007-c2377dd22060","label":"JWT Authentication","name":"JWT Authentication","link":null,"value":40,"category":"Authentication"},{"id":"4109bd30-8dcb-411a-8d89-f839f0b867a1","label":"OAuth","name":"OAuth","link":null,"value":40,"category":"Authentication"},{"id":"a5887a89-0824-4997-b9ac-2e2f9154ad8a","label":"SSO","name":"SSO","link":null,"value":40,"category":"Authentication"}]},{"id":"WebSecurity","label":"Web 安全","name":"Web 安全","link":null,"category":"WebSecurity","value":80,"children":[{"id":"0dfe37f6-800b-4551-9600-aeeff1821ef5","label":"CORS: Cross-Site Scripting (XSS) prevention","name":"CORS: Cross-Site Scripting (XSS) prevention","link":null,"value":40,"category":"WebSecurity"},{"id":"b7fa7ade-015b-4788-a606-afcf03a457ef","label":"HTTPS","name":"HTTPS","link":null,"value":40,"category":"WebSecurity"},{"id":"f4a4b555-67c0-455b-b3ee-c42f1658a002","label":"内容安全策略(CSP): 防止 XSS 攻击","name":"内容安全策略(CSP): 防止 XSS 攻击","link":null,"value":40,"category":"WebSecurity"},{"id":"6f126dd6-502d-42fd-8b0f-8ef58fc68fc7","label":"跨站请求伪造(CSRF): 防护措施","name":"跨站请求伪造(CSRF): 防护措施","link":null,"value":40,"category":"WebSecurity"},{"id":"0cf16e61-5c60-420d-b375-c6fff33f7f64","label":"OWASP Security Risks","name":"OWASP Security Risks","link":null,"value":40,"category":"WebSecurity"}]},{"id":"WebComponents","label":"WebComponents","name":"WebComponents","link":null,"category":"WebComponents","value":80,"children":[{"id":"20c8e9ae-75ff-4366-bb47-bf72f96f04d0","label":"HTML Templates","name":"HTML Templates","link":null,"value":40,"category":"WebComponents"},{"id":"934062a6-e5ba-4b44-9292-5389d36c7c3d","label":"自定义元素","name":"自定义元素","link":null,"value":40,"category":"WebComponents"},{"id":"f53ec99c-fd18-4ae0-9b91-e861ce4cb135","label":"Shadow DOM","name":"Shadow DOM","link":null,"value":40,"category":"WebComponents"}]},{"id":"SSR","label":"SSR","name":"SSR","link":null,"category":"SSR","value":80,"children":[{"id":"3a48e8c5-170e-42ab-bde4-f2c34a3b13c5","label":"React: Next.js、Astro、react-router","name":"React: Next.js、Astro、react-router","link":null,"value":40,"category":"SSR"},{"id":"c12a02c0-e6b5-4bf7-8701-660bebc44035","label":"Angular","name":"Angular","link":null,"value":40,"category":"SSR"},{"id":"b74acbd7-6cd5-4be4-9684-70840f49ee03","label":"Vue: Nuxt.js","name":"Vue: Nuxt.js","link":null,"value":40,"category":"SSR"},{"id":"81695a14-f202-4f79-a070-319faf9a6fdf","label":"Svelte: Svelte Kit","name":"Svelte: Svelte Kit","link":null,"value":40,"category":"SSR"}]},{"id":"GraphQL","label":"GraphQL","name":"GraphQL","link":null,"category":"GraphQL","value":80,"children":[{"id":"678f7e82-00f2-4d6d-9f10-061ff8c5e9c8","label":"Apollo","name":"Apollo","link":null,"value":40,"category":"GraphQL"},{"id":"a6a51fae-20dc-4ce5-ba8c-1d80338a6b53","label":"Relay Modern","name":"Relay Modern","link":null,"value":40,"category":"GraphQL"}]},{"id":"PWAs","label":"PWAs","name":"PWAs","link":null,"category":"PWAs","value":80,"children":[{"id":"194ea62e-b950-4589-93fb-e6b8becdcda0","label":"Measure&Improve perf: PRPL pattern、RAIL model","name":"Measure&Improve perf: PRPL pattern、RAIL model","link":null,"value":40,"category":"PWAs"},{"id":"e4832402-e9a4-444a-8792-1da8eacb229b","label":"Browser APIs: Web sockets、Service Workers、Server Sent Events","name":"Browser APIs: Web sockets、Service Workers、Server Sent Events","link":null,"value":40,"category":"PWAs"}]},{"id":"WebAssembly","label":"WebAssembly","name":"WebAssembly","link":null,"category":"WebAssembly","value":80,"children":[]},{"id":"Performance","label":"性能优化","name":"性能优化","link":null,"category":"Performance","value":80,"children":[{"id":"0259ac3a-f339-4cd9-b2d9-2a6bc64ee19f","label":"Lighthouse: 性能分析工具","name":"Lighthouse: 性能分析工具","link":null,"value":40,"category":"Performance"},{"id":"2f1cef51-4ddb-481a-b492-d9f1de5983b9","label":"代码分割: 动态导入、懒加载等","name":"代码分割: 动态导入、懒加载等","link":null,"value":40,"category":"Performance"},{"id":"e2eeea31-97e5-4b91-859c-c3f98990edcb","label":"服务端渲染(SSR): Next.js、Nuxt.js 等","name":"服务端渲染(SSR): Next.js、Nuxt.js 等","link":null,"value":40,"category":"Performance"}]},{"id":"Mobile","label":"移动端开发","name":"移动端开发","link":null,"category":"Mobile","value":80,"children":[{"id":"864c5612-62fe-4c7a-8129-50dedb0b8383","label":"Electron","name":"Electron","link":null,"value":40,"category":"Mobile"},{"id":"559a89ab-4d92-4c58-baea-a39f67c94416","label":"React Native: 使用 React 构建移动应用","name":"React Native: 使用 React 构建移动应用","link":null,"value":40,"category":"Mobile"},{"id":"7b1f89de-80dd-40f4-90d0-ca3ee4fbea21","label":"Flutter: 使用 Dart 构建跨平台应用","name":"Flutter: 使用 Dart 构建跨平台应用","link":null,"value":40,"category":"Mobile"}]},{"id":"DevOps","label":"DevOps 和部署","name":"DevOps 和部署","link":null,"category":"DevOps","value":80,"children":[{"id":"4c5b464f-8c49-4318-9de1-275c082cf42a","label":"Docker: 容器化应用","name":"Docker: 容器化应用","link":null,"value":40,"category":"DevOps"},{"id":"0d85bb5f-bdcd-40d7-901f-e80e874613d6","label":"CI/CD: 持续集成和持续部署","name":"CI/CD: 持续集成和持续部署","link":null,"value":40,"category":"DevOps"},{"id":"29028055-2617-408f-ac9b-965f55b2ef5f","label":"云服务: AWS、Azure、Netlify、Vercel 等","name":"云服务: AWS、Azure、Netlify、Vercel 等","link":null,"value":40,"category":"DevOps"}]},{"id":"A11y","label":"可访问性和国际化","name":"可访问性和国际化","link":null,"category":"A11y","value":80,"children":[{"id":"6e1935a1-22ce-453f-9d70-7d9e6a304ee1","label":"可访问性（a11y）: ARIA 标签、键盘导航等","name":"可访问性（a11y）: ARIA 标签、键盘导航等","link":null,"value":40,"category":"A11y"},{"id":"cacab171-2e8f-4ed4-99e8-e3f45b6018d2","label":"国际化（i18n）: 多语言支持、格式化等","name":"国际化（i18n）: 多语言支持、格式化等","link":null,"value":40,"category":"A11y"}]},{"id":"Team","label":"软技能","name":"软技能","link":null,"category":"Team","value":80,"children":[{"id":"2fbfa45e-d4fe-4677-8f60-c997207a8128","label":"项目管理: Agile、Scrum 等","name":"项目管理: Agile、Scrum 等","link":null,"value":40,"category":"Team"},{"id":"7f3be45f-0104-4f97-a385-12c2bf83bf04","label":"团队协作: 代码评审、Pair Programming 等","name":"团队协作: 代码评审、Pair Programming 等","link":null,"value":40,"category":"Team"},{"id":"8dffff4b-64e9-4e3c-a912-bc40de0d4e23","label":"持续学习: 关注社区动态、参与开源项目等","name":"持续学习: 关注社区动态、参与开源项目等","link":null,"value":40,"category":"Team"}]},{"id":"PDFs","label":"PDF附件","name":"PDF附件","link":null,"category":"PDFs","value":80,"children":[]},{"id":"Tools","label":"工具","name":"工具","link":null,"category":"Tools","value":80,"children":[]}]}
+[
+    {
+        "id": "Internet",
+        "label": "Internet",
+        "name": "Internet",
+        "link": null,
+        "category": "Internet",
+        "value": 80,
+        "children": [
+            {
+                "id": "04510a87-eec0-4bb1-a13b-71a8697ae769",
+                "label": "How does the internet work",
+                "name": "How does the internet work",
+                "link": "https://roadmap.sh/guides/what-is-internet",
+                "value": 40,
+                "category": "Internet"
+            },
+            {
+                "id": "cf175980-13ec-4fdf-b886-11d2fca5ebb4",
+                "label": "What is HTTP",
+                "name": "What is HTTP",
+                "link": null,
+                "value": 40,
+                "category": "Internet"
+            },
+            {
+                "id": "862b3b05-a23a-4430-83c8-c40ae61f7bb3",
+                "label": "Packets, Routing, and Reliability",
+                "name": "Packets, Routing, and Reliability",
+                "link": null,
+                "value": 40,
+                "category": "Internet"
+            },
+            {
+                "id": "ee72159d-355c-4edc-b18a-bb225bf5ef87",
+                "label": "What is Domain Name",
+                "name": "What is Domain Name",
+                "link": null,
+                "value": 40,
+                "category": "Internet"
+            },
+            {
+                "id": "fe5e166e-3f87-46fb-a969-28cd4b11f124",
+                "label": "What is hosting",
+                "name": "What is hosting",
+                "link": null,
+                "value": 40,
+                "category": "Internet"
+            },
+            {
+                "id": "0b7b7760-b744-4d93-8d65-de0f4b96b909",
+                "label": "Browsers and how they work",
+                "name": "Browsers and how they work",
+                "link": null,
+                "value": 40,
+                "category": "Internet"
+            }
+        ]
+    },
+    {
+        "id": "Infrastructure",
+        "label": "基础知识",
+        "name": "基础知识",
+        "link": null,
+        "category": "Infrastructure",
+        "value": 80,
+        "children": [
+            {
+                "id": "27c1ba4d-f842-4432-ad40-ec57ecee3c01",
+                "label": "HTML: 基础、语义化标签、表单、Accessibility、SEO等",
+                "name": "HTML: 基础、语义化标签、表单、Accessibility、SEO等",
+                "link": null,
+                "value": 40,
+                "category": "Infrastructure"
+            },
+            {
+                "id": "adefa9c9-c167-4c75-811a-7512c0acf3ef",
+                "label": "CSS: 基础、布局、动画、响应式设计等",
+                "name": "CSS: 基础、布局、动画、响应式设计等",
+                "link": null,
+                "value": 40,
+                "category": "Infrastructure"
+            },
+            {
+                "id": "c1bab04f-09a5-43e2-8e92-88fa0ab4ba7f",
+                "label": "JavaScript: 基础、ES6+ 语法、DOM 操作、事件处理、异步编程（Promise、async/await）等",
+                "name": "JavaScript: 基础、ES6+ 语法、DOM 操作、事件处理、异步编程（Promise、async/await）等",
+                "link": null,
+                "value": 40,
+                "category": "Infrastructure"
+            }
+        ]
+    },
+    {
+        "id": "VersionControl",
+        "label": "版本管理",
+        "name": "版本管理",
+        "link": null,
+        "category": "VersionControl",
+        "value": 80,
+        "children": [
+            {
+                "id": "9c042db5-5cf4-4db0-a514-ca20a4ff2a6f",
+                "label": "Git: 基本命令、分支管理、合并冲突等",
+                "name": "Git: 基本命令、分支管理、合并冲突等",
+                "link": null,
+                "value": 40,
+                "category": "VersionControl"
+            },
+            {
+                "id": "8d6987e4-700a-4f9c-968e-0e97710ca900",
+                "label": "GitHub/GitLab: 代码托管、CI/CD 集成等",
+                "name": "GitHub/GitLab: 代码托管、CI/CD 集成等",
+                "link": null,
+                "value": 40,
+                "category": "VersionControl"
+            },
+            {
+                "id": "0dabfecd-ee7b-432f-b010-01f7a56c8ecd",
+                "label": "包管理: npm、pnpm、yarn",
+                "name": "包管理: npm、pnpm、yarn",
+                "link": null,
+                "value": 40,
+                "category": "VersionControl"
+            }
+        ]
+    },
+    {
+        "id": "Framework",
+        "label": "前端框架和库",
+        "name": "前端框架和库",
+        "link": null,
+        "category": "Framework",
+        "value": 80,
+        "children": [
+            {
+                "id": "1d9ea233-aaf4-499b-a8bc-f86f7496078e",
+                "label": "React: Hooks、Context API、React Router、Redux 等",
+                "name": "React: Hooks、Context API、React Router、Redux 等",
+                "link": null,
+                "value": 40,
+                "category": "Framework"
+            },
+            {
+                "id": "5b855f4e-da52-4aef-825c-3a4234d25f26",
+                "label": "Vue.js: Vue 3、Composition API、Vue Router、Vuex 等",
+                "name": "Vue.js: Vue 3、Composition API、Vue Router、Vuex 等",
+                "link": null,
+                "value": 40,
+                "category": "Framework"
+            },
+            {
+                "id": "233dc806-25d9-4423-8815-a7ee1f05b452",
+                "label": "Angular: 模块、服务、依赖注入、路由、RxJS 等",
+                "name": "Angular: 模块、服务、依赖注入、路由、RxJS 等",
+                "link": null,
+                "value": 40,
+                "category": "Framework"
+            },
+            {
+                "id": "090636a5-0a24-44c3-9b8f-9442ffa46b9a",
+                "label": "Svelte",
+                "name": "Svelte",
+                "link": null,
+                "value": 40,
+                "category": "Framework"
+            }
+        ]
+    },
+    {
+        "id": "CSSArchitecture",
+        "label": "CSSArchitecture",
+        "name": "CSSArchitecture",
+        "link": null,
+        "category": "CSSArchitecture",
+        "value": 80,
+        "children": [
+            {
+                "id": "bd0bd7ce-d1c8-4013-a1f9-50f8b50044eb",
+                "label": "Writing css: Tailwind",
+                "name": "Writing css: Tailwind",
+                "link": null,
+                "value": 40,
+                "category": "CSSArchitecture"
+            },
+            {
+                "id": "c548e627-42d5-410a-b486-eb04a18c2887",
+                "label": "BEM",
+                "name": "BEM",
+                "link": null,
+                "value": 40,
+                "category": "CSSArchitecture"
+            },
+            {
+                "id": "d615d520-7c78-491c-bcb9-20134fd0ee9e",
+                "label": "Preprocessors: scss、less、postCss",
+                "name": "Preprocessors: scss、less、postCss",
+                "link": null,
+                "value": 40,
+                "category": "CSSArchitecture"
+            }
+        ]
+    },
+    {
+        "id": "CodeQuality",
+        "label": "代码质量",
+        "name": "代码质量",
+        "link": null,
+        "category": "CodeQuality",
+        "value": 80,
+        "children": [
+            {
+                "id": "cd505276-a551-4c72-9a18-358c9d5deca0",
+                "label": "规范",
+                "name": "规范",
+                "link": null,
+                "value": 40,
+                "category": "CodeQuality"
+            },
+            {
+                "id": "251e0d5c-013d-43af-aa1a-171622380ce6",
+                "label": "Linters and Formatters: Prettier、ESLint",
+                "name": "Linters and Formatters: Prettier、ESLint",
+                "link": null,
+                "value": 40,
+                "category": "CodeQuality"
+            }
+        ]
+    },
+    {
+        "id": "BuildTools",
+        "label": "构建工具",
+        "name": "构建工具",
+        "link": null,
+        "category": "BuildTools",
+        "value": 80,
+        "children": [
+            {
+                "id": "9a15f4ef-d5a4-43ce-8a3f-1833d3886985",
+                "label": "Webpack: 模块打包、插件、加载器等",
+                "name": "Webpack: 模块打包、插件、加载器等",
+                "link": null,
+                "value": 40,
+                "category": "BuildTools"
+            },
+            {
+                "id": "0359e10a-8779-4da6-bde7-d8c94ac6e2d1",
+                "label": "Vite: 快速构建工具，适用于现代前端开发",
+                "name": "Vite: 快速构建工具，适用于现代前端开发",
+                "link": null,
+                "value": 40,
+                "category": "BuildTools"
+            },
+            {
+                "id": "9fae3c63-d9f6-45a6-8a7f-ddd8c4abca71",
+                "label": "Babel: JavaScript 编译器，支持最新语法",
+                "name": "Babel: JavaScript 编译器，支持最新语法",
+                "link": null,
+                "value": 40,
+                "category": "BuildTools"
+            }
+        ]
+    },
+    {
+        "id": "Testing",
+        "label": "测试",
+        "name": "测试",
+        "link": null,
+        "category": "Testing",
+        "value": 80,
+        "children": [
+            {
+                "id": "fb68d0d4-4290-43c3-a3e2-24e651adffc3",
+                "label": "JavaScript测试框架: Jest、Vitest",
+                "name": "JavaScript测试框架: Jest、Vitest",
+                "link": null,
+                "value": 40,
+                "category": "Testing"
+            },
+            {
+                "id": "21e3c829-d5ae-45f0-90f0-9eed40f5ad0e",
+                "label": "端到端测试框架: Playwright、Cypress",
+                "name": "端到端测试框架: Playwright、Cypress",
+                "link": null,
+                "value": 40,
+                "category": "Testing"
+            }
+        ]
+    },
+    {
+        "id": "Authentication",
+        "label": "身份验证和授权策略",
+        "name": "身份验证和授权策略",
+        "link": null,
+        "category": "Authentication",
+        "value": 80,
+        "children": [
+            {
+                "id": "a974e383-4fb6-494b-9d45-8c5965b8539a",
+                "label": "Basic Authentication",
+                "name": "Basic Authentication",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            },
+            {
+                "id": "f9180b12-99e3-4808-9ec7-5df7fd472c4a",
+                "label": "Session Based Authentication",
+                "name": "Session Based Authentication",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            },
+            {
+                "id": "263b1c77-f401-4ea7-946a-56825dfc0cca",
+                "label": "Token Based Authentication",
+                "name": "Token Based Authentication",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            },
+            {
+                "id": "2794a61d-f989-4169-ab39-69651e058ceb",
+                "label": "JWT Authentication",
+                "name": "JWT Authentication",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            },
+            {
+                "id": "2fed2ef9-c2b1-4e03-ad74-3c580434ed76",
+                "label": "OAuth",
+                "name": "OAuth",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            },
+            {
+                "id": "3e54d617-c591-48aa-93d2-a6b45347b92d",
+                "label": "SSO",
+                "name": "SSO",
+                "link": null,
+                "value": 40,
+                "category": "Authentication"
+            }
+        ]
+    },
+    {
+        "id": "WebSecurity",
+        "label": "Web 安全",
+        "name": "Web 安全",
+        "link": null,
+        "category": "WebSecurity",
+        "value": 80,
+        "children": [
+            {
+                "id": "8de6fd9f-feef-44ec-8c85-f09ab6b946e6",
+                "label": "CORS: Cross-Site Scripting (XSS) prevention",
+                "name": "CORS: Cross-Site Scripting (XSS) prevention",
+                "link": null,
+                "value": 40,
+                "category": "WebSecurity"
+            },
+            {
+                "id": "f3b5e7d9-9e14-455b-9b9c-4068ddfc2192",
+                "label": "HTTPS",
+                "name": "HTTPS",
+                "link": null,
+                "value": 40,
+                "category": "WebSecurity"
+            },
+            {
+                "id": "42470a86-23bd-40b4-a8ce-21ad2ab9717f",
+                "label": "内容安全策略(CSP): 防止 XSS 攻击",
+                "name": "内容安全策略(CSP): 防止 XSS 攻击",
+                "link": null,
+                "value": 40,
+                "category": "WebSecurity"
+            },
+            {
+                "id": "89f2dfe7-a987-4e4d-9f4f-18bed2261099",
+                "label": "跨站请求伪造(CSRF): 防护措施",
+                "name": "跨站请求伪造(CSRF): 防护措施",
+                "link": null,
+                "value": 40,
+                "category": "WebSecurity"
+            },
+            {
+                "id": "125e589c-b308-4ca1-9668-f3b7fc3ebcaf",
+                "label": "OWASP Security Risks",
+                "name": "OWASP Security Risks",
+                "link": null,
+                "value": 40,
+                "category": "WebSecurity"
+            }
+        ]
+    },
+    {
+        "id": "WebComponents",
+        "label": "WebComponents",
+        "name": "WebComponents",
+        "link": null,
+        "category": "WebComponents",
+        "value": 80,
+        "children": [
+            {
+                "id": "dfce0986-956b-437a-b0c7-eb3d83c72463",
+                "label": "HTML Templates",
+                "name": "HTML Templates",
+                "link": null,
+                "value": 40,
+                "category": "WebComponents"
+            },
+            {
+                "id": "dd7c05cd-e535-4dc4-ac79-e32eb5c49f47",
+                "label": "自定义元素",
+                "name": "自定义元素",
+                "link": null,
+                "value": 40,
+                "category": "WebComponents"
+            },
+            {
+                "id": "18732caa-a19d-4761-bbb9-0e121fc7bb58",
+                "label": "Shadow DOM",
+                "name": "Shadow DOM",
+                "link": null,
+                "value": 40,
+                "category": "WebComponents"
+            }
+        ]
+    },
+    {
+        "id": "SSR",
+        "label": "SSR",
+        "name": "SSR",
+        "link": null,
+        "category": "SSR",
+        "value": 80,
+        "children": [
+            {
+                "id": "d6853c20-00d5-4fee-8049-1ec8483c84f1",
+                "label": "React: Next.js、Astro、react-router",
+                "name": "React: Next.js、Astro、react-router",
+                "link": null,
+                "value": 40,
+                "category": "SSR"
+            },
+            {
+                "id": "c74e668b-0ed8-4738-aceb-44cf06c8a9ae",
+                "label": "Angular",
+                "name": "Angular",
+                "link": null,
+                "value": 40,
+                "category": "SSR"
+            },
+            {
+                "id": "31aa3df0-c824-4a23-966c-4f221b571a13",
+                "label": "Vue: Nuxt.js",
+                "name": "Vue: Nuxt.js",
+                "link": null,
+                "value": 40,
+                "category": "SSR"
+            },
+            {
+                "id": "e4775606-7bab-4e3a-a004-6d702209ecb3",
+                "label": "Svelte: Svelte Kit",
+                "name": "Svelte: Svelte Kit",
+                "link": null,
+                "value": 40,
+                "category": "SSR"
+            }
+        ]
+    },
+    {
+        "id": "GraphQL",
+        "label": "GraphQL",
+        "name": "GraphQL",
+        "link": null,
+        "category": "GraphQL",
+        "value": 80,
+        "children": [
+            {
+                "id": "075d3665-9efa-4742-a20c-3ee67a4c2415",
+                "label": "Apollo",
+                "name": "Apollo",
+                "link": null,
+                "value": 40,
+                "category": "GraphQL"
+            },
+            {
+                "id": "d7f60b9d-fddb-4ce0-8d56-0292f13f018a",
+                "label": "Relay Modern",
+                "name": "Relay Modern",
+                "link": null,
+                "value": 40,
+                "category": "GraphQL"
+            }
+        ]
+    },
+    {
+        "id": "PWAs",
+        "label": "PWAs",
+        "name": "PWAs",
+        "link": null,
+        "category": "PWAs",
+        "value": 80,
+        "children": [
+            {
+                "id": "efe0e56d-169b-4624-bec7-f2137a7f3740",
+                "label": "Measure&Improve perf: PRPL pattern、RAIL model",
+                "name": "Measure&Improve perf: PRPL pattern、RAIL model",
+                "link": null,
+                "value": 40,
+                "category": "PWAs"
+            },
+            {
+                "id": "6e542052-47ea-4c3a-b5d0-8c1723ddf2d3",
+                "label": "Browser APIs: Web sockets、Service Workers、Server Sent Events",
+                "name": "Browser APIs: Web sockets、Service Workers、Server Sent Events",
+                "link": null,
+                "value": 40,
+                "category": "PWAs"
+            }
+        ]
+    },
+    {
+        "id": "WebAssembly",
+        "label": "WebAssembly",
+        "name": "WebAssembly",
+        "link": null,
+        "category": "WebAssembly",
+        "value": 80,
+        "children": []
+    },
+    {
+        "id": "Performance",
+        "label": "性能优化",
+        "name": "性能优化",
+        "link": null,
+        "category": "Performance",
+        "value": 80,
+        "children": [
+            {
+                "id": "dea93c7e-818b-48f1-89fe-53a5a2f4e5f4",
+                "label": "Lighthouse: 性能分析工具",
+                "name": "Lighthouse: 性能分析工具",
+                "link": null,
+                "value": 40,
+                "category": "Performance"
+            },
+            {
+                "id": "760811ee-384b-457f-a089-7a4111ff07aa",
+                "label": "代码分割: 动态导入、懒加载等",
+                "name": "代码分割: 动态导入、懒加载等",
+                "link": null,
+                "value": 40,
+                "category": "Performance"
+            },
+            {
+                "id": "99f49b0d-0b85-4531-bff6-622a0cc6b950",
+                "label": "服务端渲染(SSR): Next.js、Nuxt.js 等",
+                "name": "服务端渲染(SSR): Next.js、Nuxt.js 等",
+                "link": null,
+                "value": 40,
+                "category": "Performance"
+            }
+        ]
+    },
+    {
+        "id": "Mobile",
+        "label": "移动端开发",
+        "name": "移动端开发",
+        "link": null,
+        "category": "Mobile",
+        "value": 80,
+        "children": [
+            {
+                "id": "824652ab-31e4-47e3-8acf-5b606f50821c",
+                "label": "Electron",
+                "name": "Electron",
+                "link": null,
+                "value": 40,
+                "category": "Mobile"
+            },
+            {
+                "id": "38af5b3a-75a5-4580-b1a5-a71f023c04a3",
+                "label": "React Native: 使用 React 构建移动应用",
+                "name": "React Native: 使用 React 构建移动应用",
+                "link": null,
+                "value": 40,
+                "category": "Mobile"
+            },
+            {
+                "id": "9f4dd41d-d52d-4d95-8a6e-5918caaf34e2",
+                "label": "Flutter: 使用 Dart 构建跨平台应用",
+                "name": "Flutter: 使用 Dart 构建跨平台应用",
+                "link": null,
+                "value": 40,
+                "category": "Mobile"
+            }
+        ]
+    },
+    {
+        "id": "DevOps",
+        "label": "DevOps 和部署",
+        "name": "DevOps 和部署",
+        "link": null,
+        "category": "DevOps",
+        "value": 80,
+        "children": [
+            {
+                "id": "fc75245b-4edb-4c03-a742-d2f5e011f936",
+                "label": "Docker: 容器化应用",
+                "name": "Docker: 容器化应用",
+                "link": null,
+                "value": 40,
+                "category": "DevOps"
+            },
+            {
+                "id": "1f228eb8-8c5b-4c1a-a12d-27e5f43fec4d",
+                "label": "CI/CD: 持续集成和持续部署",
+                "name": "CI/CD: 持续集成和持续部署",
+                "link": null,
+                "value": 40,
+                "category": "DevOps"
+            },
+            {
+                "id": "b37acd16-d40a-42bc-9ba5-70007da05b5c",
+                "label": "云服务: AWS、Azure、Netlify、Vercel 等",
+                "name": "云服务: AWS、Azure、Netlify、Vercel 等",
+                "link": null,
+                "value": 40,
+                "category": "DevOps"
+            }
+        ]
+    },
+    {
+        "id": "A11y",
+        "label": "可访问性和国际化",
+        "name": "可访问性和国际化",
+        "link": null,
+        "category": "A11y",
+        "value": 80,
+        "children": [
+            {
+                "id": "955ba77b-0d35-4667-946c-1cdde59003a5",
+                "label": "可访问性（a11y）: ARIA 标签、键盘导航等",
+                "name": "可访问性（a11y）: ARIA 标签、键盘导航等",
+                "link": null,
+                "value": 40,
+                "category": "A11y"
+            },
+            {
+                "id": "198fef7b-8943-496e-8a3e-33abcf6f1323",
+                "label": "国际化（i18n）: 多语言支持、格式化等",
+                "name": "国际化（i18n）: 多语言支持、格式化等",
+                "link": null,
+                "value": 40,
+                "category": "A11y"
+            }
+        ]
+    },
+    {
+        "id": "Team",
+        "label": "软技能",
+        "name": "软技能",
+        "link": null,
+        "category": "Team",
+        "value": 80,
+        "children": [
+            {
+                "id": "48debac3-fa24-47f4-b6ff-0222ab116d8f",
+                "label": "项目管理: Agile、Scrum 等",
+                "name": "项目管理: Agile、Scrum 等",
+                "link": null,
+                "value": 40,
+                "category": "Team"
+            },
+            {
+                "id": "4d090d5c-297d-45eb-82d6-27d7754884a2",
+                "label": "团队协作: 代码评审、Pair Programming 等",
+                "name": "团队协作: 代码评审、Pair Programming 等",
+                "link": null,
+                "value": 40,
+                "category": "Team"
+            },
+            {
+                "id": "24178f22-1328-4af5-8ae7-1d226ac04117",
+                "label": "持续学习: 关注社区动态、参与开源项目等",
+                "name": "持续学习: 关注社区动态、参与开源项目等",
+                "link": null,
+                "value": 40,
+                "category": "Team"
+            }
+        ]
+    },
+    {
+        "id": "PDFs",
+        "label": "PDF附件",
+        "name": "PDF附件",
+        "link": null,
+        "category": "PDFs",
+        "value": 80,
+        "children": []
+    },
+    {
+        "id": "Tools",
+        "label": "工具",
+        "name": "工具",
+        "link": null,
+        "category": "Tools",
+        "value": 80,
+        "children": []
+    }
+]
