@@ -2,9 +2,13 @@
 title: using git in gitlab-ci
 date: 2021-08-17 18:59:37
 category: DevOps
+tags:
+  - DevOps
+  - GitLab CICD
+  - GitLab CICD git
 ---
 
-记录在gitlab-ci里面运行 Git 
+# 记录在 gitlab-ci 里面运行 Git
 
 <!-- more -->
 

@@ -1,10 +1,5 @@
----
-title: CSS 选择器
-date: 2020-07-17 17:42:17
-category: Infrastructure
----
 
-CSS 选择器学习
+# CSS 选择器学习
 
 <!-- more -->
 
@@ -61,14 +56,14 @@ CSS 选择器学习
 
 ## [attribute]
 CSS属性选择器根据给定属性是否存在或属性的值匹配元素。
-如下示例，精确匹配 链接地址是 https://www.synyi.com 的 `a` 元素，设置 red 颜色。
+如下示例，精确匹配 链接地址是 https://www.sy.com 的 `a` 元素，设置 red 颜色。
 
 ```HTML
-  <a href="https://www.synyi.com">https://www.synyi.com</a>
+  <a href="https://www.sy.com">https://www.sy.com</a>
   <br>
   <a href="https://www.baidu.com">https://www.baidu.com</a>
 
-  <style>a[href="https://www.synyi.com"] { color: red; }</style>
+  <style>a[href="https://www.sy.com"] { color: red; }</style>
 ```
 
 除了精确匹配，总计有下述7种方式匹配方式

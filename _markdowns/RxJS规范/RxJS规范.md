@@ -1,7 +1,12 @@
 ---
- title: RxJS规范
- category: CodeQuality
+title: RxJS规范
+category: CodeQuality
+tags:
+  - RxJS
+  - RxJS规范
 ---
+
+# RxJS 规范
 
 ## [必须]组件销毁时取消订阅
 

@@ -1,5 +1,5 @@
 
-架构规范
+# Angular项目架构规范Draft
 
 ![](./angular/项目目录组织和NgModule依赖规范.png)
 

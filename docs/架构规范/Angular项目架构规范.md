@@ -1,9 +1,11 @@
 
-# 一. 总体项目结构
+# Angular 项目架构规范
+
+## 一. 总体项目结构
 
 ![](./Angular项目架构规范/fe-architecture.jpg)
 
-# 二.  规范说明
+## 二.  规范说明
 
 ## 2.0. 约定
 
@@ -34,7 +36,7 @@ Service+Repository 怎么使用:
 | Normalize  | 数据的标准化或者格式化操作                            | API 返回结果: user: {id: 1, displayName: 'xxx', birthday: '2009-12-10'} 标准化为: user: {id: 1, name: 'xxx', age: 11} | 1.JSON 数据 normalize 后返回的还是 JSON 数据;2.若数据源格式与期望的格式一致，可以不需要 Normalize    |
 | Serialize  | 数据与业务实体的转化，比如 JSON <=> Model             | deserialize(IUserDTO): User serialize(User): IUserDTO                                                                 | 1.deserialize 传入  JSON 格式数据，返回值是业务模型 2.serialize 传入业务模型，返回值是 JSON 格式数据 |
 
-## 2.1. 项目架构规范
+### 2.1. 项目架构规范
 
 ![](./Angular项目架构规范/项目架构规范.png)
 
@@ -68,7 +70,7 @@ Service+Repository 怎么使用:
 - 说明： 特性模块懒加载注册文件
 - 备注： 可选
 
-## 2.2. domain - 共享业务核心架构规范
+### 2.2. domain - 共享业务核心架构规范
 
 ![](./Angular项目架构规范/domain%20-%20共享业务核心架构规范.png)
 
@@ -91,7 +93,7 @@ Service+Repository 怎么使用:
 - 说明： 对外 API
 - 备注： 导出必要的 Model、Service 类
 
-## 2.3. shared - 共享 UI 架构规范
+### 2.3. shared - 共享 UI 架构规范
 
 - **仅可依赖 Utils、 DomainCore**
 
@@ -122,7 +124,7 @@ Service+Repository 怎么使用:
 - 说明： 对外 API
 - 备注： 导出 share.module.ts 的 SharedModule
 
-## 2.4. component 架构规范
+### 2.4. component 架构规范
 
 - **仅可依赖 Utils、 DomainCore、Shared**
   ![](./Angular项目架构规范/component架构规范.png)
@@ -173,7 +175,7 @@ Service+Repository 怎么使用:
 - 说明： 对外 API
 - 备注：若存在 xx.module.ts 则导出其 NgModule，若无则导出当前 Component
 
-## 2.5. feature 架构规范
+### 2.5. feature 架构规范
 
 - **仅可依赖 Utils、 DomainCore、Shared**
   ![](./Angular项目架构规范/feature%20架构规范.png)

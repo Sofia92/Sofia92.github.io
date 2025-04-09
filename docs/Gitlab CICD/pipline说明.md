@@ -1,4 +1,6 @@
 
+# GitLab pipeline 说明
+
 与 Jenkins 不同，gitlab 的 pipeline 是跟随每一个项目的，配置于项目根目录下的.gitlab-ci.yml 文件中，对此文件的修改也就是对 pipeline 的修改都会记录在 git 的版本控制历史中。
 
 > 当打开了下面所示的”默认为 Auto DevOps 流水线“时，即使项目缺少.gitlab-ci.yml 文件也会运行流水线。

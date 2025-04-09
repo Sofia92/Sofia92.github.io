@@ -2,9 +2,11 @@
 title: Safari 兼容
 date: 2021-11-30 10:29:17
 category: Infrastructure
+tags:
+  - 浏览器兼容
 ---
 
-记录EMR-APP兼容 Safari 过程
+# 记录EMR-APP兼容 Safari 过程
 
 <!-- more -->
 

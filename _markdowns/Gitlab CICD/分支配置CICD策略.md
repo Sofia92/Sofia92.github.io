@@ -1,7 +1,12 @@
 ---
- title: 分支配置CICD策略
- category: DevOps
+title: 分支配置CICD策略
+category: DevOps
+tags:
+  - DevOps
+  - GitLab CICD
 ---
+
+# 分支配置CICD策略
 
 <details>
 <summary>事情是这样的</summary>

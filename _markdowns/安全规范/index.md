@@ -1,9 +1,11 @@
 ---
- title: 安全规范
- category: WebSecurity
+title: 安全规范
+category: WebSecurity
+tags: 
+- 前端安全
 ---
 
-# 安全规范
+## 安全规范
 
 前端信息安全  [https://github.com/littlewolftk/webIS](https://github.com/littlewolftk/webIS)
 

@@ -1,5 +1,5 @@
 
-## 常用 JS 正则表达式
+# 常用 JS 正则表达式
 
 使用说明，再用到的地方 `import { REG_INT } from '@core/utils';`
 
@@ -31,4 +31,11 @@
 export const REG_INPUT_INTEGER_NUMBER = new RegExp(/[^0-9]/g);    // 输入框限制>=0的整数
 export const REG_CHINA_MOBILE = /1\d{10}/;  // 电话号码校验正则fallback
 export const REG_SERVER_TIME = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})\.(\d{3})/;  // 服务端同步时间格式
+export const REG_MainLand_ID = /^[0-9]{17}[0-9X]$/ || /^[0-9]{15}$/; // 大陆身份证格式
+export const REG_HONGKONG_ID = /^[A-Z][0-9]{6}(\([0-9A-Z]\)|（[0-9A-Z]）)$/; // 香港身份证格式
+export const REG_Macou_ID = /^[0-9]{7}(\([0-9]\)|（[0-9]）)$/; // 澳门身份证格式
+export const REG_Taiwan_ID = /^[A-Z][0-9]{9}$/; // 台湾身份证格式
+export const REG_HongkongMOrMacouPassport = /^[HM][0-9]{8}$/; // 港澳通行证格式
+export const REG_TaiwanPassportId = /^[0-9]{8}$/; // 台湾通行证格式
+export const REG_POSTAL_CODE = /^[0-9]{6}$/; // 邮政编码格式
 ```

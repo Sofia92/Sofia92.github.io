@@ -1,19 +1,23 @@
 ---
- title: Git commit hook
- category: VersionControl
+title: Git commit hook
+category: GIT
+tags:
+  - GIT手册
+  - Husky
+  - GIT Commit lint
 ---
 
+# Git commit hook
 
 > Tips
 >
 > 根据 commit 规范，我们建立 git hooks 对 commit msg 检测 配置，效果如下，当我们配置不规范的 commit 时，会被提醒不允许 commit
 >
-> [commit 规范 👉 指路](./commit规范.md)
+> [commit 规范 👉 指路](./3.commit规范.md)
 
 ### 配置方式如下
 
 **Step1.** 安装依赖
-
 
 ```Bash
 # 安装 husky 如果已安装跳过此步骤

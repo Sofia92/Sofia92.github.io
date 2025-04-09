@@ -1,8 +1,13 @@
 ---
- title: Git 项目分支规范和 CI 环境变量配置
- category: DevOps
+title: Git 项目分支规范和 CI 环境变量配置
+category: DevOps
+tags:
+  - DevOps
+  - GitLab CICD
+  - GitLab CICD Variables
 ---
 
+# Git 项目分支规范和 CI 环境变量配置
 
 > 掌握公司 DevOps 流程的实战可以参考视频：[https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118](https://ww58d668fc292f65d4.study.moxueyuan.com/course/569118)
 >

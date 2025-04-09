@@ -1,9 +1,11 @@
 ---
- title: Angular与四层架构模式
- category: Framework
+title: Angular项目架构规范Draft
+category: Framework
+tags:
+  - Angular项目架构
 ---
 
-架构规范
+# Angular项目架构规范Draft
 
 ![](./angular/项目目录组织和NgModule依赖规范.png)
 

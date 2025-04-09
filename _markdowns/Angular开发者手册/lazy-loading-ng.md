@@ -1,10 +1,14 @@
 ---
 title: Angular Lazy loading
 date: 2020-12-29 17:42:17
-category: Framework
+category: Performance
+tags:
+  - Angular手册
+  - 懒加载
+  - Performance
 ---
 
-Angular 懒加载
+# Angular 懒加载
 
 <!-- more -->
 

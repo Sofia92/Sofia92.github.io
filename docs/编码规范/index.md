@@ -1,10 +1,10 @@
 
-# 编码规范
+## 编码规范
 
 > 本文档是前端工作组执行代码质量抽检的审查清单, 也可用于前端代码检视的参考指南
 > 文档会根据实践进行积累和优化，持续更新
 
-# 用词
+## 用词
 
 - 必须：  必须遵守的清单项；
 - 推荐：  大多数情况应该遵守的清单项，特殊情况需要在代码检视过程解释清楚并获得同意通过;
@@ -521,3 +521,207 @@ this.el.innerHTML = data;
 //推荐的做法
 //使用动态component或者对data进行escape
 ```
+
+# 编码规范（补充版）
+
+## 5. 代码可读性与维护性
+
+### 5001.[推荐] 代码注释规范
+
+- **为何**：清晰的注释有助于团队协作和代码维护
+- **要求**：
+  1. 复杂逻辑必须添加注释解释设计意图
+  2. 公共 API 需使用文档化注释（如 JSDoc）
+  3. 避免冗余注释（如 `i++ // 递增i`）
+
+```typescript
+// Bad
+function calc(a, b) {
+  return a + b; // 返回a加b
+}
+
+// Good
+/**
+ * 计算两数之和
+ * @param a 第一个加数
+ * @param b 第二个加数
+ * @returns 两数之和
+ */
+function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+### 5002.[必须] 模块化设计原则
+
+- **为何**：减少耦合，提升代码复用性
+- **要求**：
+  1. 单一文件职责：每个文件只处理一个核心功能
+  2. 模块依赖需显式声明，禁止隐式全局依赖
+
+```typescript
+// Bad（混合功能）
+class UserService {
+  // 同时包含用户认证和数据获取逻辑
+}
+
+// Good（拆分职责）
+class AuthService { ... }
+class UserDataService { ... }
+```
+
+---
+
+## 6. 错误处理与日志
+
+### 6001.[必须] 异常捕获规范
+
+- **为何**：未捕获的异常可能导致应用崩溃
+- **要求**：
+  1. 异步操作必须包含错误处理（`.catch()` 或 `try/catch`）
+  2. 关键操作需记录错误日志（避免敏感信息）
+
+```typescript
+// Bad
+fetch("/api/data").then((res) => res.json());
+
+// Good
+fetch("/api/data")
+  .then((res) => res.json())
+  .catch((err) => {
+    console.error("[API] 请求失败:", err);
+    showToast("数据加载失败");
+  });
+```
+
+### 6002.[推荐] 错误边界处理（React 示例）
+
+```typescript
+class ErrorBoundary extends React.Component {
+  componentDidCatch(error, info) {
+    logErrorToService(error, info.componentStack);
+  }
+  render() {
+    return this.props.children;
+  }
+}
+
+// 使用
+<ErrorBoundary>
+  <UserProfile />
+</ErrorBoundary>;
+```
+
+---
+
+## 7. 测试规范
+
+### 7001.[必须] 单元测试覆盖率
+
+- **要求**：核心业务逻辑测试覆盖率 ≥80%
+- **示例**（Jest）：
+
+```typescript
+// math.ts
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+
+// math.test.ts
+test("adds 1 + 2 to equal 3", () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+### 7002.[推荐] 集成测试场景
+
+- **为何**：确保模块间交互符合预期
+- **工具建议**：Cypress / Playwright
+
+```typescript
+// 用户登录流程测试
+describe("Login Flow", () => {
+  it("应成功跳转至仪表盘", () => {
+    cy.visit("/login");
+    cy.get("#username").type("test@synyi.com");
+    cy.get("#password").type("123456");
+    cy.get("form").submit();
+    cy.url().should("include", "/dashboard");
+  });
+});
+```
+
+---
+
+## 8. 国际化与本地化
+
+### 8001.[必须] 文本外部化
+
+- **为何**：便于多语言支持和维护
+- **要求**：
+  1. 禁止在代码中硬编码用户可见文本
+  2. 使用国际化键值对（如 `i18n` 库）
+
+```typescript
+// Bad
+<button>Submit</button>;
+
+// Good
+import { t } from "i18n";
+<button>{t("common.submit")}</button>;
+```
+
+### 8002.[推荐] 日期与货币格式化
+
+```typescript
+// 使用 Intl API 处理本地化格式
+const date = new Date();
+const formattedDate = new Intl.DateTimeFormat("zh-CN").format(date);
+
+const price = 99.9;
+const formattedPrice = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+}).format(price);
+```
+
+---
+
+## 9. 依赖管理
+
+### 9001.[必须] 版本锁定
+
+- **要求**：使用 `package-lock.json` 或 `yarn.lock` 锁定依赖版本
+- **为何**：避免因依赖版本更新导致构建失败
+
+### 9002.[推荐] 依赖审计
+
+- **工具**：`npm audit` 或 `yarn audit`
+- **流程**：
+  1. 定期扫描项目依赖
+  2. 高风险漏洞需 24 小时内修复
+
+---
+
+## 10. 浏览器兼容性
+
+### 10001.[必须] 特性检测
+
+- **为何**：避免因浏览器差异导致功能异常
+- **示例**：
+
+```typescript
+// 检测 Fetch API 支持
+if (!window.fetch) {
+  import("whatwg-fetch"); // 动态加载 polyfill
+}
+```
+
+### 10002.[推荐] 渐进增强策略
+
+- **要求**：核心功能需在 IE11+ / Chrome 60+ 等基线浏览器中可用
+- **工具**：Babel + @babel/preset-env
+
+---
+
+> **持续更新说明**：本规范将根据技术演进和团队反馈动态调整，建议定期查阅最新版本。
