@@ -1,7 +1,7 @@
 ---
 title: CSS 选择器
 date: 2020-07-17 17:42:17
-category: Infrastructure
+category: CSS
 tags:
   - CSS 选择器
 ---
