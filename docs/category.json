@@ -11,6 +11,10 @@
                 "path": "./Angular开发者手册/resizable-component.md"
             },
             {
+                "title": "contentEditable 可编辑内容数据变更",
+                "path": "./Angular开发者手册/内容可编辑.md"
+            },
+            {
                 "title": "前后端通信",
                 "path": "./Angular开发者手册/前后端通信.md"
             },
@@ -198,7 +202,7 @@
             },
             {
                 "title": "使用 Husky 和 lint-staged 实现 Git 提交前代码规范检查",
-                "path": "./风格规范/风格规范lint-staged.md"
+                "path": "./风格规范/风格规范lint-staged/风格规范lint-staged.md"
             }
         ]
     },
@@ -250,15 +254,15 @@
             },
             {
                 "title": "Angular项目架构规范",
-                "path": "./架构规范/Angular项目架构规范.md"
+                "path": "./架构规范/Angular项目架构规范/Angular项目架构规范.md"
             },
             {
                 "title": "Angular项目架构规范Draft",
-                "path": "./架构规范/Angular项目架构规范Draft.md"
+                "path": "./架构规范/Angular项目架构规范Draft/Angular项目架构规范Draft.md"
             },
             {
                 "title": "前端应用架构调研",
-                "path": "./架构规范/前端应用架构调研.md"
+                "path": "./架构规范/前端应用架构调研/前端应用架构调研.md"
             }
         ]
     },
@@ -275,7 +279,7 @@
             },
             {
                 "title": "CSS 选择器",
-                "path": "./基础知识/2.css/selectors.md"
+                "path": "./基础知识/2.css/selectors/selectors.md"
             }
         ]
     },
@@ -294,15 +298,6 @@
             {
                 "title": "Safari 兼容",
                 "path": "./基础知识/safari.md"
-            }
-        ]
-    },
-    {
-        "label": "Angular",
-        "value": [
-            {
-                "title": "contentEditable 可编辑内容数据变更",
-                "path": "./基础知识/指令/内容可编辑.md"
             }
         ]
     },
@@ -379,11 +374,11 @@
         "value": [
             {
                 "title": "项目文档规范",
-                "path": "./文档规约/index.md"
+                "path": "./文档规约/项目文档规范/项目文档规范.md"
             },
             {
                 "title": "Readmine项目管理简单流程",
-                "path": "./流程规范/Readmine项目管理简单流程.md"
+                "path": "./流程规范/Readmine项目管理简单流程/Readmine项目管理简单流程.md"
             }
         ]
     }

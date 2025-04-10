@@ -9,7 +9,7 @@ tags:
 
 ## 一. 总体项目结构
 
-![](./Angular项目架构规范/fe-architecture.jpg)
+![](./fe-architecture.jpg)
 
 ## 二.  规范说明
 
@@ -44,7 +44,7 @@ Service+Repository 怎么使用:
 
 ### 2.1. 项目架构规范
 
-![](./Angular项目架构规范/项目架构规范.png)
+![](./项目架构规范.png)
 
 ### utils/
 
@@ -78,7 +78,7 @@ Service+Repository 怎么使用:
 
 ### 2.2. domain - 共享业务核心架构规范
 
-![](./Angular项目架构规范/domain%20-%20共享业务核心架构规范.png)
+![](./domain%20-%20共享业务核心架构规范.png)
 
 ### models/
 
@@ -103,7 +103,7 @@ Service+Repository 怎么使用:
 
 - **仅可依赖 Utils、 DomainCore**
 
-![](./Angular项目架构规范/domain%20-%20共享业务核心架构规范.png)
+![](./domain%20-%20共享业务核心架构规范.png)
 
 ### components/
 
@@ -133,7 +133,7 @@ Service+Repository 怎么使用:
 ### 2.4. component 架构规范
 
 - **仅可依赖 Utils、 DomainCore、Shared**
-  ![](./Angular项目架构规范/component架构规范.png)
+  ![](./component架构规范.png)
 
 ### components/
 
@@ -184,7 +184,7 @@ Service+Repository 怎么使用:
 ### 2.5. feature 架构规范
 
 - **仅可依赖 Utils、 DomainCore、Shared**
-  ![](./Angular项目架构规范/feature%20架构规范.png)
+  ![](./feature%20架构规范.png)
 
 ### domain/
 

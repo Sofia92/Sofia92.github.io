@@ -1,10 +1,3 @@
----
-title: 使用 Husky 和 lint-staged 实现 Git 提交前代码规范检查
-category: CodeQuality
-tags: 
-- Husky
-- lint-staged
----
 
 # 使用 Husky 和 lint-staged 实现 Git 提交前代码规范检查
 
@@ -65,9 +58,9 @@ npm install -D husky@3.0.4 lint-staged@9.2.5
 1. **暂存区过滤**：仅检查 `git add` 后的文件，未暂存的修改不会触发检查。
 2. **错误处理**：若检查失败，所有错误信息会汇总输出，示例如下：
    - 命令行错误提示：
-     ![命令行错误示例](./lint-staged/cmd-staged-error.png)
+     ![命令行错误示例](./cmd-staged-error.png)
    - Sourcetree 错误提示：
-     ![Sourcetree错误示例](./lint-staged/sourcetree-error.png)
+     ![Sourcetree错误示例](./sourcetree-error.png)
 3. **中断风险**：执行过程中若强制取消（如 `Ctrl+C`），可能导致代码丢失。建议通过 `git reflog` 尝试恢复。
 
 ---

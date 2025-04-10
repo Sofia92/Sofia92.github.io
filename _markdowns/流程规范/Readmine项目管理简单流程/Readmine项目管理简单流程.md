@@ -1,3 +1,9 @@
+---
+title: Readmine项目管理简单流程
+category: Team
+tags:
+  - Readmine
+---
 
 # Readmine 项目管理简单流程
 
@@ -9,4 +15,4 @@
 
 # 二、 Redmine 开发/bug 流程
 
-![](./images/redmine流程.jpg)
+![](./redmine流程.jpg)
