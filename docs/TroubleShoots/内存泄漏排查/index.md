@@ -45,17 +45,30 @@
 
 **代码路径：**`src/app/global.module.ts`
 
-[?](#)
-
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="js plain">public static forRoot(): ModuleWithProviders&lt;GlobalModule&gt; {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">return</code> <code class="js plain">{</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">ngModule: GlobalModule,</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// providers: [...PROVIDES], // 注释掉此代码即可全局去除路由复用</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div><div class="line number6 index5 alt1"><code class="js plain">}</code></div></div></td></tr></tbody></table>
+```Typescript
+public static forRoot(): ModuleWithProviders<GlobalModule> {
+    return {
+        ngModule: GlobalModule,
+        // providers: [...PROVIDES], // 注释掉此代码即可全局去除路由复用
+    };
+}
+```
 
 #### code 2: 医嘱在去除路由复用之后，需要在 `ngOnInit` 生命周期里加入下述代码保障运行正常
 
 **代码路径：**`projects/inpatient/src/features/inpatient/patient-detail/medical-order/current-order/order-list/order-list.component.ts`
 
-[?](#)
-
-<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="js plain">public ngOnInit(): void {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">... </code><code class="js comments">// 下述代码仅在去除路由复用之后使用</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">._activatedRoute.params</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">.pipe(map(params =&gt; +params[</code><code class="js string">'inpatId'</code><code class="js plain">]))</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">.subscribe(inpatId =&gt; {</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">.inpatId = inpatId;</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">this</code><code class="js plain">._getTableData(</code><code class="js keyword">this</code><code class="js plain">.inpatId, </code><code class="js keyword">this</code><code class="js plain">.commonService.deptId, </code><code class="js keyword">true</code><code class="js plain">);</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">});</code></div><div class="line number9 index8 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table>
+```Typescript
+public ngOnInit(): void {
+    ... // 下述代码仅在去除路由复用之后使用
+    this._activatedRoute.params
+        .pipe(map(params => +params['inpatId']))
+        .subscribe(inpatId => {
+            this.inpatId = inpatId;
+            this._getTableData(this.inpatId, this.commonService.deptId, true);
+        });
+}
+```
 
 #### Observable 增加 takeUntil operator
 

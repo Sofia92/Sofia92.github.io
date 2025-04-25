@@ -506,3 +506,100 @@ export class EMRIndexedDB {
 Client - 客户端报错：Angular 错误，内部 exception，console error 等）
 Custom
 Server - HTTP 响应错误 如 4xx, 5xx
+
+## 日志导出
+
+然而出于 Chrome DevTool 开发者工具 IndexedDB 管理界面的功能限制，对于这些日志的查询分析仍然存在不便利。因此，我写了个简单的日志导出脚本，生成可下载的 txt 日志文件，导出后可以发回到家里进行分析。
+
+脚本源码如下：
+
+```Javascript
+(() => {
+  function num2(n) {
+    return n.toString().padStart(2, "0");
+  }
+  function formatDate(date) {
+    return `${date.getFullYear()}-${num2(date.getMonth() + 1)}-${num2(date.getDate())} ${num2(date.getHours())}:${num2(date.getMinutes())}:${num2(date.getSeconds())}`;
+  }
+  function parseDate(str) {
+    const reg = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/g;
+    const matched = reg.exec(str);
+    if (!matched) {
+      const message = "日期格式不正确，应为YYYY-MM-DD HH:mm:ss";
+      alert(message);
+      throw new Error(message);
+    }
+    const [_, year, month, day, hour, min, sec] = matched;
+    const date = new Date();
+    date.setFullYear(+year);
+    date.setMonth(+month - 1);
+    date.setDate(+day);
+    date.setHours(+hour);
+    date.setMinutes(+min);
+    date.setSeconds(+sec);
+    return date;
+  }
+  async function loadDb(db, start, name) {
+    const objectStore = db.transaction([name]).objectStore(name);
+    console.log(`loading with start=${start}, ${formatDate(start)}`);
+    const range = IDBKeyRange.lowerBound(+start);
+    const cursor = objectStore.openCursor(range);
+    return await new Promise((resolve, reject) => {
+      const results = [];
+      cursor.onsuccess = function(e) {
+        const result = e.target.result;
+        if (result) {
+          const resultObj = { key: result.key, value: result.value };
+          if (result.key >= start) {
+            console.log("track", resultObj);
+            results.push(resultObj);
+          } else {
+            console.log("skipped", resultObj);
+          }
+          result.continue();
+        } else {
+          console.log(`load db ${name} done`);
+          resolve(results);
+        }
+      };
+      cursor.onerror = reject;
+    });
+  }
+  async function collect(startFrom, dbName, objStoreNames) {
+    const request = window.indexedDB.open(dbName);
+    const collection = await new Promise((resolve, reject) => {
+      request.onsuccess = function() {
+        Promise.all(objStoreNames.map(async (name) => {
+          const loaded = await loadDb(this.result, startFrom, name);
+          return { name, result: loaded };
+        })).then(resolve).catch(reject);
+      };
+      request.onerror = reject;
+    });
+    return collection;
+  }
+  function formatLog(name, results, verbose = false) {
+    return results.map(({ value }) => `${value?.timeString}|${name}|${JSON.stringify(verbose ? value : { errorType: value?.errorType, location: value?.document?.location, message: value?.error?.message })}`).join("\n");
+  }
+  function exportFile(text, filename) {
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.download = filename;
+    link.href = window.URL.createObjectURL(blob);
+    link.click();
+  }
+  !async function() {
+    const objStoreNames = ["Client", "Server"];
+    const now = new Date();
+    now.setHours(0);
+    now.setMinutes(0);
+    now.setSeconds(0);
+    const startOfToday = now;
+    const dateString = prompt("输入日志起始时间，默认为今天零时起", formatDate(startOfToday)) ?? formatDate(startOfToday);
+    const parsed = parseDate(dateString);
+    const collection = await collect(parsed, "syEMRAPP", objStoreNames);
+    const text = collection.map(({ result, name }) => formatLog(name, result, true)).join("\n");
+    exportFile(text, `emr_log_${+new Date()}.txt`);
+  }();
+})();
+```
