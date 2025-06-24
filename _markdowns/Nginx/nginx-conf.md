@@ -3,12 +3,22 @@ title: Nginx 常用配置指南
 date: 2022-09-22 10:29:17
 category: Nginx
 tags:
-  - Snippets
+  + Snippets
 ---
 
 # Nginx 常用配置指南
 
 ---
+
+## 配置文件路径为：
+
+ 
+
+```bash
+/usr/local/etc/nginx/nginx.conf
+# M1 系统路径
+/opt/homebrew/etc/nginx/nginx.conf
+```
 
 ## 核心配置模板
 
@@ -75,6 +85,30 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
+```
+
+### 2.1. 读取客户端IP地址
+
+nginx.conf 配置
+
+```nginx
+ location /ip {
+    proxy_pass http://localhost:3000;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+```
+
+后端读取
+
+```javascript
+router.get('/', function(req, res, next) {
+    res.json({
+        xRealIp: req.headers['x-real-ip'] || 'null',
+        xForwardedFor: req.headers['x-forwarded-for'] || 'null',
+        ip: req.ip
+    });
+});
 ```
 
 ### 3. 负载均衡配置
@@ -184,7 +218,7 @@ location /old-page {
 
 | 功能         | 命令              |
 | ------------ | ----------------- | ----------- |
-| 检查配置语法 | `nginx -t`        |
+| 检查配置语法 | `nginx -t` |
 | 热重载配置   | `nginx -s reload` |
 | 查看运行状态 | `ps aux           | grep nginx` |
 | 查看连接状态 | `netstat -tulpn   | grep nginx` |
@@ -196,4 +230,4 @@ location /old-page {
 > 1. 修改配置前务必执行 `nginx -t` 验证语法
 > 2. 敏感目录（如证书文件）应设置 700 权限
 > 3. 生产环境建议禁用服务器版本号显示  
->    `server_tokens off;`
+> `server_tokens off;`
