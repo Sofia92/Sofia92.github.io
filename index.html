@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Sofia的知识库</title>
-  <meta name="keywords" content="sofia, Web前端开发, Angular, 个人博客, JavaScript, HTML, CSS, 前端框架, 编程, 技术分享, 前端工程师">
-  <meta name="description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Sofia的知识库">
-  <meta property="og:description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
-  <meta property="og:image" content="https://sofia92.github.io/favicon.ico">
-  <meta property="og:url" content="https://sofia92.github.io">
-  <meta property="og:type" content="website">
-  <link rel="manifest" href="./manifest.json">
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sofia的知识库</title>
+    <meta name="keywords" content="sofia, Web前端开发, Angular, 个人博客, JavaScript, HTML, CSS, 前端框架, 编程, 技术分享, 前端工程师">
+    <meta name="description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sofia的知识库">
+    <meta property="og:description"
+      content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
+    <meta property="og:image" content="https://sofia92.github.io/favicon.ico">
+    <meta property="og:url" content="https://sofia92.github.io">
+    <meta property="og:type" content="website">
+    <link rel="manifest" href="./manifest.json">
+    <!-- 应用名称 -->
+    <meta name="application-name" content="我的应用">
+    <meta name="apple-mobile-web-app-title" content="我的应用">
+
+    <!-- 移动端优化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- 状态栏样式 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
+    <!-- 启动画面 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -28,26 +44,26 @@
           }
         }
         </script>
-  <!-- Favicon -->
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24JQLD6EL4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24JQLD6EL4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-    gtag('config', 'G-24JQLD6EL4');
-  </script>
-  <link rel="stylesheet" href="assets/css/normalize.css">
-</head>
+      gtag('config', 'G-24JQLD6EL4');
+    </script>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+  </head>
 
-<body>
-  <header class="layout_header flex" justify="between" align="center">
+  <body>
+    <header class="layout_header flex" justify="between" align="center">
       <h4 class="flex gap-sm"> Sofia的知识库 </h4>
-  </header>
-  <div id="main" style="margin: 20px;" appCardWrap></div>
-  <script src="./assets/js/index.js?new Date()"></script>
-</body>
+    </header>
+    <div id="main" style="margin: 20px;" appCardWrap></div>
+    <script src="./assets/js/index.js?new Date()"></script>
+  </body>
 
 </html>

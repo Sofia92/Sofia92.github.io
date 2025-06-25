@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sofia的知识库</title>
@@ -9,7 +9,7 @@
     <meta name="description" content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
     <!-- 添加代码高亮 -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.6/marked.min.js"></script>
     <!-- 添加代码字体 -->
@@ -18,10 +18,26 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Sofia的知识库">
     <meta property="og:description"
-        content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
+      content="sofia的个人知识库站点，分享Web前端开发知识，涵盖Angular、JavaScript、HTML、CSS等内容，致力于成为前端开发者的学习资源。">
     <meta property="og:image" content="https://sofia92.github.io/favicon.ico">
     <meta property="og:url" content="https://sofia92.github.io">
     <meta property="og:type" content="website">
+    <link rel="manifest" href="/manifest.json">
+    <!-- 应用名称 -->
+    <meta name="application-name" content="我的应用">
+    <meta name="apple-mobile-web-app-title" content="我的应用">
+
+    <!-- 移动端优化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- 状态栏样式 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
+    <!-- 启动画面 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Structured Data -->
     <script type="application/ld+json">
         {
@@ -41,39 +57,39 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-24JQLD6EL4"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-        gtag('config', 'G-24JQLD6EL4');
+      gtag('config', 'G-24JQLD6EL4');
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="layout_header flex" justify="between" align="center">
-        <h4 class="flex gap-sm">
-            <a onclick="window.location.href='/'">回首页</a> Sofia的知识库
-        </h4>
-        <div class="flex">
-            <p id="title"></p>
-            <button class="menu-toggle mobile-only">☰</button>
-        </div>
+      <h4 class="flex gap-sm">
+        <a onclick="window.location.href='/'">回首页</a> Sofia的知识库
+      </h4>
+      <div class="flex">
+        <p id="title"></p>
+        <button class="menu-toggle mobile-only">☰</button>
+      </div>
     </header>
     <div class="container">
-        <div class="sidebar"></div>
-        <div class="content" id="content">
-            <pre>
+      <div class="sidebar"></div>
+      <div class="content" id="content">
+        <pre>
                     <code class="language-html">
                         <span>Hello World!</span>
                         <span>我是Sofia</span>
                     </code>
                 </pre>
-            <div style="text-align: center; color: #666; margin-top: 2rem;">
-                👈 请从左侧选择一个文档以查看内容
-            </div>
+        <div style="text-align: center; color: #666; margin-top: 2rem;">
+          👈 请从左侧选择一个文档以查看内容
         </div>
+      </div>
     </div>
     <script type="module" src="./category.js"></script>
-</body>
+  </body>
 
 </html>
